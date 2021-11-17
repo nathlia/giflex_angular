@@ -4,14 +4,17 @@ import { CharactersTrayComponent } from './components/characters-tray/characters
 import { CharactersComponent } from './components/characters/characters.component';
 
 
-
 @NgModule({
   declarations: [
     CharactersTrayComponent,
-    CharactersComponent
+    CharactersComponent,
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    CharactersComponent,
+    CharactersTrayComponent
   ]
 })
 export class HomeModule { }

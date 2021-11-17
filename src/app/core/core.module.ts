@@ -1,12 +1,12 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MainComponent } from './components/main/main.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { HeaderTextComponent } from './components/header-text/header-text.component';
 
 @NgModule({
-  declarations: [NavbarComponent, MainComponent],
+  declarations: [NavbarComponent, HeaderTextComponent],
   imports: [CommonModule],
-  exports: [NavbarComponent, MainComponent]
+  exports: [NavbarComponent, HeaderTextComponent]
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {

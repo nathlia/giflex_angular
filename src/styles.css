@@ -30,3 +30,11 @@ p {
 a {
     font-family: "Merriweather", serif;
 }
+
+#main.container {
+    background: #191923;
+    min-height: 775px;
+    margin-top: 2%;
+    border-radius: 14px;
+    padding: 18px 18px 18px 46px;
+}
