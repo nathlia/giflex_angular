@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CharactersTrayComponent } from './components/characters-tray/characters-tray.component';
 import { CharactersComponent } from './components/characters/characters.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -10,7 +11,8 @@ import { CharactersComponent } from './components/characters/characters.componen
     CharactersComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ],
   exports: [
     CharactersComponent,
