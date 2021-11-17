@@ -11,6 +11,9 @@ import { AddArtifactFormComponent } from './pages/artifacts/add-artifact-form/ad
 import { AddSubstatsComponent } from './pages/artifacts/add-substats/add-substats.component';
 import { ArtifactSetShowComponent } from './pages/artifact-set-show/artifact-set-show.component';
 import { ArtifactsTrayComponent } from './pages/artifact-set-show/artifacts-tray/artifacts-tray.component';
+import { CharacterStatsCardComponent } from './pages/artifact-set-show/character-stats-card/character-stats-card.component';
+import { SelectImageShowcaseComponent } from './pages/select-image-showcase/select-image-showcase.component';
+import { ShowcaseComponent } from './pages/showcase/showcase.component';
 
 
 @NgModule({
@@ -24,6 +27,9 @@ import { ArtifactsTrayComponent } from './pages/artifact-set-show/artifacts-tray
     AddSubstatsComponent,
     ArtifactSetShowComponent,
     ArtifactsTrayComponent,
+    CharacterStatsCardComponent,
+    SelectImageShowcaseComponent,
+    ShowcaseComponent,
   ],
   imports: [
     CommonModule,
