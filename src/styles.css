@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    font-family: 'Merriweather', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    text-align: left;
+    margin: 0;
+    font-size: 115%;
+    background: #121212;
+    overflow-wrap: anywhere;
+    color: #d9d9d9;
+}
