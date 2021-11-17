@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharactersComponent implements OnInit {
 
+  toAddCharacter(e: MouseEvent) {
+    // do stuff
+   }
+
   constructor() { }
 
   ngOnInit(): void {

@@ -1,0 +1,39 @@
+#item {
+    width: 150px;
+    height: 212px;
+    margin: 18px;
+    position: relative;
+    background: #27263A;
+    border-radius: 12px;
+}
+
+.character-card-status {
+    position: relative;
+    width: 151px;
+    height: 175px;
+    background: #27263A;
+    border-radius: 12px;
+    padding-top: 1px;
+    text-align: center;
+}
+
+#character-card-name {
+    position: relative;
+    height: 39px;
+    text-align: center;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    background: rgba(255, 191, 27, 0.74);
+}
+
+#character-card-name {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#character-card-img {
+    position: relative;
+    width: 150px;
+    height: auto;
+    top: 22px;
+}
