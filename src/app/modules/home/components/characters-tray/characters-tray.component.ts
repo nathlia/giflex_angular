@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharactersTrayComponent implements OnInit {
 
+  chara: string = 'Xiao';
+
   constructor() { }
 
   ngOnInit(): void {

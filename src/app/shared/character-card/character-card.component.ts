@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-character-card',
@@ -7,14 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharacterCardComponent implements OnInit {
 
+  chara: any = {
+    name: 'Xiao',
+    critRate: '',
+    critDMg: ''
+  };
+
   // url: string = 'https://static.wikia.nocookie.net/gensin-impact/images/b/b9/Character_Xiao_Thumb.png/revision/latest/scale-to-width-down/256?cb=20210214012045';
   url: string = './assets/img/character/Xiao.png';
 
-  chara: any = {
-    name: "Xiao",
-    critRate: '',
-    critDmg: ''
-  };
+  // @Input('name') name: string = '';
+
+  // getChara() {
+  //   this.character.name = this.name;
+  // }
 
   constructor() { }
 
