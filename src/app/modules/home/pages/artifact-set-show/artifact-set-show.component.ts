@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArtifactSetShowComponent implements OnInit {
 
+  chara: any = {
+    id: 1,
+  };
+
   constructor() { }
 
   ngOnInit(): void {

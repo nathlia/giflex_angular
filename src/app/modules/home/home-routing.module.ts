@@ -24,7 +24,7 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'add-artifact',
+    path: 'artifact',
     loadChildren: () =>
       import('./pages/artifacts/artifacts.module').then(
         (m) => m.ArtifactsModule

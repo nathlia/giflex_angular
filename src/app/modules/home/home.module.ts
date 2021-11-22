@@ -13,12 +13,12 @@ import { RouterModule } from '@angular/router';
     CharactersTrayComponent,
     CharactersComponent,
   ],
-  imports: [
-    CommonModule,
-    SharedModule,
-
+  imports: [ 
     RouterModule,
-    HomeRoutingModule,    
+    HomeRoutingModule, 
+    CommonModule,
+    SharedModule
+      
   ],
   exports: [
   ]

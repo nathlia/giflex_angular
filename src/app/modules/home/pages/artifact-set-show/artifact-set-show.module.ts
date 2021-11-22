@@ -6,11 +6,13 @@ import { ArtifactsTrayComponent } from './artifacts-tray/artifacts-tray.componen
 import { CharacterStatsCardComponent } from './character-stats-card/character-stats-card.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { ArtifactSetShowComponent } from './artifact-set-show.component';
 
 @NgModule({
   declarations: [
     ArtifactsTrayComponent,
-    CharacterStatsCardComponent
+    CharacterStatsCardComponent,
+    ArtifactSetShowComponent
   ],
   imports: [
     CommonModule,
