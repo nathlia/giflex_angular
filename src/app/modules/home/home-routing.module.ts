@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CharactersComponent } from './components/characters/characters.component';
-import { ArtifactSetShowComponent } from './pages/artifact-set-show/artifact-set-show.component';
 
 const routes: Routes = [
   {
@@ -21,8 +19,15 @@ const routes: Routes = [
   {
     path: 'artifact-set',
     loadChildren: () =>
-      import('./components/characters/characters.module').then(
-        (m) => m.CharactersModule
+      import('./pages/artifact-set-show/artifact-set-show.module').then(
+        (m) => m.ArtifactSetShowModule
+      ),
+  },
+  {
+    path: 'add-artifact',
+    loadChildren: () =>
+      import('./pages/artifacts/artifacts.module').then(
+        (m) => m.ArtifactsModule
       ),
   }
 ];

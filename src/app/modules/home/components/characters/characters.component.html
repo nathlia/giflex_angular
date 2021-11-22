@@ -1,8 +1,9 @@
 <p>My Characters</p>
+<!-- <app-characters-tray></app-characters-tray> -->
 
 <ul>
     <li *ngFor="let chara of charas">
-        <a [routerLink]="['artifacts-set', chara.name]"> {{ chara.name }}</a>
+        <a [routerLink]="[ 'artifacts-set', chara.name] "> {{ chara.name }}</a>
     </li>
 </ul>
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CharactersService } from '../characters/characters.service';
 
 @Component({
   selector: 'app-characters-tray',
@@ -7,11 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharactersTrayComponent implements OnInit {
 
-  charaId: number = 1;
+  //charaId: number = 1;
 
-  constructor() { }
+  charas: any[] = [];
+
+  constructor(private charactersService: CharactersService) {}
 
   ngOnInit(): void {
+    this.charas = this.charactersService.getChara();
   }
 
 }
