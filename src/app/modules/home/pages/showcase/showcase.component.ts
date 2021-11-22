@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowcaseComponent implements OnInit {
 
+  imageId1 = 1;
+
   constructor() { }
 
   ngOnInit(): void {
