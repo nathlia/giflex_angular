@@ -2,7 +2,7 @@
 
 <ul>
     <li *ngFor="let chara of charas">
-        <a [routerLink]="[chara.name, 'artifacts-set']"> {{ chara.name }}</a>
+        <a [routerLink]="['artifacts-set', chara.name]"> {{ chara.name }}</a>
     </li>
 </ul>
 
