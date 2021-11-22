@@ -29,6 +29,20 @@ const routes: Routes = [
       import('./pages/artifacts/artifacts.module').then(
         (m) => m.ArtifactsModule
       ),
+  },
+  {
+    path: 'select-image',
+    loadChildren: () =>
+      import('./pages/select-image-showcase/select-image-showcase.module').then(
+        (m) => m.SelectImageShowcaseModule
+      ),
+  },
+  {
+    path: 'showcase',
+    loadChildren: () =>
+      import('./pages/showcase/showcase.module').then(
+        (m) => m.ShowcaseModule
+      ),
   }
 ];
 
