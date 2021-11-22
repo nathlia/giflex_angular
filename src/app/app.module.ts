@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeModule } from './modules/home/home.module';
+
+import { AppRoutingModule } from './app-routing.module';
+import { CoreRoutingModule } from './core/core-routing.module';
+import { HomeRoutingModule } from './modules/home/home-routing.module';
 
 @NgModule({
   declarations: [
@@ -14,11 +17,14 @@ import { HomeModule } from './modules/home/home.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     SharedModule,
     CoreModule,
     NgbModule,
-    HomeModule
+    HomeModule,
+
+    AppRoutingModule,
+    CoreRoutingModule,
+    HomeRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

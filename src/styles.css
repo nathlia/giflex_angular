@@ -1,9 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
 body {
-    font-family: "Merriweather", serif;
+    /* font-family: "Merriweather", serif; */
     font-family: 'Open Sans', sans-serif;
-    font-weight: 900;
+    /* font-weight: 900; */
     text-align: left;
     margin: 0;
     font-size: 115%;
@@ -25,11 +25,11 @@ h6 {
 
 p {
     font-size: 18px;
-    font-family: "Merriweather", serif;
+    /* font-family: "Merriweather", serif; */
 }
 
 a {
-    font-family: "Merriweather", serif;
+    /* font-family: "Merriweather", serif; */
 }
 
 #main.container {
