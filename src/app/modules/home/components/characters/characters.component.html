@@ -1,3 +1,9 @@
 <p>My Characters</p>
-<app-button (click)="toAddCharacter($event)">Add Character</app-button>
-<app-characters-tray></app-characters-tray>
+
+<ul>
+    <li *ngFor="let chara of charas">
+        <a [routerLink]="[chara.name, 'artifacts-set']"> {{ chara.name }}</a>
+    </li>
+</ul>
+
+<router-outlet></router-outlet>

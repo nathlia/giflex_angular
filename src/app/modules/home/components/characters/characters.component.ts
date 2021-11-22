@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CharactersService } from './characters.service';
 
 @Component({
   selector: 'app-characters',
   templateUrl: './characters.component.html',
-  styleUrls: ['./characters.component.css']
+  styleUrls: ['./characters.component.css'],
 })
 export class CharactersComponent implements OnInit {
+  charas: any[] = [];
 
-  toAddCharacter(e: MouseEvent) {
-    // do stuff
-   }
-
-  constructor() { }
+  constructor(private charactersService: CharactersService) {}
 
   ngOnInit(): void {
+    this.charas = this.charactersService.getChara();
   }
-
 }

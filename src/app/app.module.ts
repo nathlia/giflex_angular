@@ -10,6 +10,7 @@ import { HomeModule } from './modules/home/home.module';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreRoutingModule } from './core/core-routing.module';
 import { HomeRoutingModule } from './modules/home/home-routing.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { HomeRoutingModule } from './modules/home/home-routing.module';
     NgbModule,
     HomeModule,
 
+    RouterModule,
     AppRoutingModule,
     CoreRoutingModule,
     HomeRoutingModule

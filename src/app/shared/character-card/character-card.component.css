@@ -37,3 +37,10 @@
     height: auto;
     top: 22px;
 }
+
+a,
+a:hover,
+a:visited {
+    text-decoration: none;
+    color: #FFFFFF;
+}

@@ -4,24 +4,23 @@ import { CommonModule } from '@angular/common';
 import { CharactersComponent } from './components/characters/characters.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { CharactersTrayComponent } from './components/characters-tray/characters-tray.component';
-import { SelectImageShowcaseComponent } from './pages/select-image-showcase/select-image-showcase.component';
-import { ShowcaseComponent } from './pages/showcase/showcase.component';
-
+import { HomeRoutingModule } from './home-routing.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
+    CharactersComponent,
     CharactersTrayComponent,
     CharactersComponent,
-    SelectImageShowcaseComponent,
-    ShowcaseComponent,
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+
+    RouterModule,
+    HomeRoutingModule,    
   ],
   exports: [
-    CharactersComponent,
-    CharactersTrayComponent
   ]
 })
 export class HomeModule { }

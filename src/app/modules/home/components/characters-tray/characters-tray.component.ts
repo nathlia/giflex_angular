@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharactersTrayComponent implements OnInit {
 
-  chara: string = 'Xiao';
+  charaId: number = 1;
 
   constructor() { }
 
