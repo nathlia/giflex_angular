@@ -12,5 +12,5 @@
         <input class="active" class="form-control" [(ngModel)]="chara.critDmg" type="text" name="critDmg" maxlength="6">
     </div>
 
-    <button id="btn-save" type="submit" class="btn btn-primary">Save</button>
+    <button id="btn-save" type="submit" [routerLink]="['/artifacts-set', chara.name]" class="btn btn-primary">Save</button>
 </form>

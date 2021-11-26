@@ -5,7 +5,7 @@ import { ArtifactsRoutingModule } from './artifacts-routing.module';
 import { AddArtifactFormComponent } from './add-artifact-form/add-artifact-form.component';
 import { AddSubstatsComponent } from './add-substats/add-substats.component';
 import { ArtifactsComponent } from './artifacts.component';
-import { RouterLink, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({

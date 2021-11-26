@@ -21,7 +21,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
     FormsModule,
     SharedModule,
 
-
     RouterModule,
     ArtifactSetShowRoutingModule
   ],

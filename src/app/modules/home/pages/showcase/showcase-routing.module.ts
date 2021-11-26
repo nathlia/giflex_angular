@@ -4,16 +4,13 @@ import { ShowcaseComponent } from './showcase.component';
 
 const routes: Routes = [
   {
-    path: '', 
+    path: ':name/:id',
     component: ShowcaseComponent,
-    // children: [
-    //   { path: 'childpath', component: ChildComponent }
-    // ]
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class ShowcaseRoutingModule { }
+export class ShowcaseRoutingModule {}

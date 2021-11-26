@@ -1,5 +1,13 @@
-<p>select-image-showcase works!</p>
+<h3>Select Image to Showcase</h3>
 
-<a class="btn btn-primary" [routerLink]="['/showcase']">Image 1</a>
+<div class="row">
+    <div *ngFor="let image of images">
+        <div class="col-md">
+            <a class="btn btn-primary" [routerLink]="['/showcase', chara.name, images.id]">Image {{ image.id }}</a>
+        </div>
+    </div>
+</div>
+
+
 <br>
 <br>

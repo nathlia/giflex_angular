@@ -31,7 +31,7 @@ export class CharactersService {
   getCharaById(id: number){
     for (let i= 0; i< this.characters.length; i++){
       let character = this.characters[i];
-      if (character.id === id){
+      if (character.id == id){
         return character;
       }
     }

@@ -4,7 +4,7 @@ import { SelectImageShowcaseComponent } from './select-image-showcase.component'
 
 const routes: Routes = [
   {
-    path: '', 
+    path: ':name', 
     component: SelectImageShowcaseComponent,
     // children: [
     //   { path: '', component: ChildComponent }
