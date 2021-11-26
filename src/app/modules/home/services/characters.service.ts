@@ -26,11 +26,21 @@ export class CharactersService {
     return this.characters;
   }
 
-  getCharaList(id: number){
+  getCharaById(id: number){
+    for (let i= 0; i<this.characters.length; i++){
+      let character = this.characters[i];
+      if (character.id === id){
+        return character;
+      }
+    }
+    return null;
+  }
+
+  getCharaByName(name: string){
     for (let i=0; i<this.characters.length; i++){
-      let characters = this.characters[i];
-      if (characters.id == id){
-        return characters;
+      let character = this.characters[i];
+      if (character.name === name){
+        return character;
       }
     }
     return null;

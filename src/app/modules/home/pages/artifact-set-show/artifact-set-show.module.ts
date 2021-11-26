@@ -7,6 +7,7 @@ import { CharacterStatsCardComponent } from './character-stats-card/character-st
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ArtifactSetShowComponent } from './artifact-set-show.component';
+import { CharactersService } from '../../services/characters.service';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ArtifactSetShowComponent } from './artifact-set-show.component';
 
     RouterModule,
     ArtifactSetShowRoutingModule
-  ]
+  ],
+  providers: [CharactersService]
 })
 export class ArtifactSetShowModule { }

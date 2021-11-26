@@ -17,6 +17,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'add-character',
+    loadChildren: () =>
+      import('./pages/add-character/add-characters.module').then(
+        (m) => m.AddCharactersModule
+      ),
+  },
+  {
     path: 'artifact-set',
     loadChildren: () =>
       import('./pages/artifact-set-show/artifact-set-show.module').then(

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { CharactersService } from '../../services/characters.service';
 
 @Component({
   selector: 'app-artifact-set-show',
@@ -7,13 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArtifactSetShowComponent implements OnInit {
 
-  chara: any = {
-    id: 1,
-  };
+  chara: any;
+  sub: Subscription = new Subscription;
 
-  constructor() { }
+  constructor(
+    private charactersService: CharactersService,
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.sub = this.route.params.subscribe(
+      (paramns: any) => {
+        let name = paramns['name'];
+        this.chara = this.charactersService.getCharaByName(name);
+      }
+    );
+  }  
+   
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
-
 }
