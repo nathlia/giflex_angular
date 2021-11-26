@@ -8,6 +8,7 @@ import { CharactersService } from '../../services/characters.service';
 import { AddCharacterComponent } from './add-character.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { CharactersModule } from '../../components/characters/characters.module';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { CharactersModule } from '../../components/characters/characters.module'
     SharedModule,
     // CharactersModule,
 
+    RouterModule,
     AddCharactersRoutingModule    
   ],
   providers: [CharactersService]

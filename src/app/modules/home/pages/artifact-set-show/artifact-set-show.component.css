@@ -1,0 +1,26 @@
+.character-card-status {
+    position: relative;
+    width: 151px;
+    height: 175px;
+    background: #27263A;
+    border-radius: 12px;
+    padding-top: 1px;
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas: "character artifacts artifacts" "character artifacts artifacts" "character artifacts artifacts";
+}
+
+.character {
+    grid-area: character;
+}
+
+.artifacts {
+    grid-area: artifacts;
+}

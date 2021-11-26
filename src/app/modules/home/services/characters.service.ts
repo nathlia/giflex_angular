@@ -9,15 +9,17 @@ export class CharactersService {
     {
       id: 1,
       name: "Xiao",
+      level: '90',
       critRate: '70',
-      critDMg: '180.5',
+      critDmg: '180.5',
   
     },
     {
       id: 2,
       name: "Tartaglia",
-      critRate: '',
-      critDMg: '',
+      level: '90',
+      critRate: '75',
+      critDmg: '135.7',
   
     }
   ];

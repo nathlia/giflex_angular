@@ -1,13 +1,26 @@
-<p>artifact-set-show works!</p>
-<app-character-card [routerLink]="['artifacts-set', chara.name]" [chara]="chara"></app-character-card>
+<h3>Artifact Set</h3>
 
-<a class="btn btn-primary" [routerLink]="['/add-character', chara.name ,'edit']">Edit character</a>
-<br>
-<br>
-<a class="btn btn-primary" [routerLink]="['/artifact', 'edit']">Edit artifact</a>
-<br>
-<br>
-<a class="btn btn-primary" [routerLink]="['/artifact', 'add']">Add artifact</a>
-<br>
-<br>
-<a class="btn btn-primary" [routerLink]="['/select-image']">Select image</a>
+<div class="container">
+    <div class="character">
+        <app-character-card [routerLink]="['/add-character', chara.name ,'edit']" [chara]="chara"></app-character-card>
+        <div class="character-card-status">
+            <p> Level: {{ chara.level }}</p>
+            <p> Crit Rate: {{ chara.critRate }}</p>
+            <p> Crit DMG: {{ chara.critDmg }}</p>
+            <a class="btn btn-primary" [routerLink]="['/add-character', chara.name ,'edit']">Edit</a>
+        </div>
+    </div>
+    <div class="artifacts">
+
+        <br>
+        <br>
+        <a class="btn btn-primary" [routerLink]="['/artifact', 'edit']">Edit artifact</a>
+        <br>
+        <br>
+        <a class="btn btn-primary" [routerLink]="['/artifact', 'add']">Add artifact</a>
+        <br>
+        <br>
+        <a class="btn btn-primary" [routerLink]="['/select-image']">Select image</a>
+
+    </div>
+</div>
