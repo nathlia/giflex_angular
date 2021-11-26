@@ -11,6 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { CoreRoutingModule } from './core/core-routing.module';
 import { HomeRoutingModule } from './modules/home/home-routing.module';
 import { RouterModule } from '@angular/router';
+import { CharactersService } from './modules/home/services/characters.service';
+import { SelectImageService } from './modules/home/services/select-image.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,7 @@ import { RouterModule } from '@angular/router';
     CoreRoutingModule,
     HomeRoutingModule
   ],
-  providers: [],
+  providers: [CharactersService, SelectImageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

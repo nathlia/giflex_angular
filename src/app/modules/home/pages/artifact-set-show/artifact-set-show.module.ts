@@ -23,7 +23,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
 
     RouterModule,
     ArtifactSetShowRoutingModule
-  ],
-  providers: [CharactersService]
+  ]  
 })
 export class ArtifactSetShowModule { }

@@ -11,14 +11,18 @@ import { SelectImageService } from '../../services/select-image.service';
 })
 export class SelectImageShowcaseComponent implements OnInit {
 
-  image: any;
+  //images: any [] = [];
 
   chara: any;
   sub: Subscription = new Subscription;
+  selectImageService: any;
 
   constructor(
     private charactersService: CharactersService,
-    private route: ActivatedRoute) { }
+    selectImageService: SelectImageService,
+    private route: ActivatedRoute) { 
+      this.selectImageService = selectImageService;
+    }
 
   ngOnInit(): void {
     this.sub = this.route.params.subscribe(
@@ -27,6 +31,8 @@ export class SelectImageShowcaseComponent implements OnInit {
         this.chara = this.charactersService.getCharaByName(name);        
       }
     );
+
+    //this.images = this.selectImageService.getImage();
   }  
    
   ngOnDestroy() {
@@ -48,8 +54,5 @@ export class SelectImageShowcaseComponent implements OnInit {
     }
   ];
 
-  getImage(){
-    return this.images;
-  }
 
 }

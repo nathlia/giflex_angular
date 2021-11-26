@@ -15,6 +15,6 @@ import { ArtifactSetShowModule } from '../../pages/artifact-set-show/artifact-se
     RouterModule,
     CharactersRoutingModule
   ],
-  providers: [CharactersService]
+  //providers: [CharactersService]
 })
 export class CharactersModule { }
