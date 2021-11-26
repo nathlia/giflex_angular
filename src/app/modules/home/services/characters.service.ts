@@ -9,8 +9,8 @@ export class CharactersService {
     {
       id: 1,
       name: "Xiao",
-      critRate: '',
-      critDMg: '',
+      critRate: '70',
+      critDMg: '180.5',
   
     },
     {
@@ -27,7 +27,7 @@ export class CharactersService {
   }
 
   getCharaById(id: number){
-    for (let i= 0; i<this.characters.length; i++){
+    for (let i= 0; i< this.characters.length; i++){
       let character = this.characters[i];
       if (character.id === id){
         return character;
@@ -37,7 +37,7 @@ export class CharactersService {
   }
 
   getCharaByName(name: string){
-    for (let i=0; i<this.characters.length; i++){
+    for (let i=0; i< this.characters.length; i++){
       let character = this.characters[i];
       if (character.name === name){
         return character;

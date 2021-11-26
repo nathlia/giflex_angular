@@ -1,4 +1,5 @@
 <p>artifact-set-show works!</p>
+<app-character-card [routerLink]="['artifacts-set', chara.name]" [chara]="chara"></app-character-card>
 
 <a class="btn btn-primary" [routerLink]="['/add-character', chara.name ,'edit']">Edit character</a>
 <br>

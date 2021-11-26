@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ArtifactSetShowComponent } from './artifact-set-show.component';
 import { CharactersService } from '../../services/characters.service';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,8 @@ import { CharactersService } from '../../services/characters.service';
   imports: [
     CommonModule,
     FormsModule,
+    SharedModule,
+
 
     RouterModule,
     ArtifactSetShowRoutingModule

@@ -17,6 +17,7 @@ import { RouterModule } from '@angular/router';
     HomeRoutingModule, 
     CommonModule,
     SharedModule
+   
       
   ],
   exports: [

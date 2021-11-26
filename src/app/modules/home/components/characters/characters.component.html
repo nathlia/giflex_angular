@@ -1,10 +1,11 @@
-<p>My Characters</p>
+<h3>My Characters</h3>
 <!-- <app-characters-tray></app-characters-tray> -->
+<p>Select a Character</p>
 
-<ul>
-    <li *ngFor="let chara of charas">
-        <a [routerLink]="[ 'artifacts-set', chara.name] "> {{ chara.name }}</a>
-    </li>
-</ul>
-
-<router-outlet></router-outlet>
+<section class="row">
+    <div *ngFor="let chara of charas">
+        <div class="col-" id="character-card">
+            <app-character-card [routerLink]="['artifacts-set', chara.name]" [chara]="chara"></app-character-card>
+        </div>
+    </div>
+</section>
