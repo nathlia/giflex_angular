@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { CharactersService } from '../../services/characters.service';
@@ -11,6 +11,9 @@ import { SelectImageService } from '../../services/select-image.service';
 })
 export class ShowcaseComponent implements OnInit {  
 
+  // @Input('chara') chara: any;
+  // @Input('image') image: any;
+
   image: any;
   chara: any;
   sub: Subscription = new Subscription;
@@ -18,7 +21,9 @@ export class ShowcaseComponent implements OnInit {
   constructor(
     private charactersService: CharactersService,
     private selectImageservice: SelectImageService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute
+    )
+     { }
 
   ngOnInit(): void {
     this.sub = this.route.params.subscribe(
@@ -31,7 +36,7 @@ export class ShowcaseComponent implements OnInit {
     this.sub = this.route.params.subscribe(
       (paramns: any) => {
         let id = paramns['id'];
-        this.chara = this.selectImageservice.getImageById(id);
+        this.image = this.selectImageservice.getImageById(id);
       }
     );
   }  

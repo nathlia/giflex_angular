@@ -11,7 +11,7 @@ import { SelectImageService } from '../../services/select-image.service';
 })
 export class SelectImageShowcaseComponent implements OnInit {
 
-  //images: any [] = [];
+  images: any [] = [];
 
   chara: any;
   sub: Subscription = new Subscription;
@@ -32,27 +32,10 @@ export class SelectImageShowcaseComponent implements OnInit {
       }
     );
 
-    //this.images = this.selectImageService.getImage();
+   this.images = this.selectImageService.getImage();
   }  
    
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
-
-  images: any = [
-    {
-      id: 1   
-    },
-    {
-      id: 2 
-    },
-    {
-      id: 3
-    },
-    {
-      id: 4
-    }
-  ];
-
-
 }

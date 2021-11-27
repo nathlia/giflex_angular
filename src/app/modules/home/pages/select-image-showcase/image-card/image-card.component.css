@@ -1,0 +1,12 @@
+.image-card {
+    margin-bottom: 7%;
+}
+
+img:hover {
+    border-color: #ae5eff;
+}
+
+img {
+    border-radius: 12px;
+    border: 1px solid transparent;
+}
