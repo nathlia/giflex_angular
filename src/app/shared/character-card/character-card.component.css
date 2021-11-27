@@ -1,10 +1,14 @@
 #item {
     width: 150px;
-    height: 212px;
     margin: 18px;
     position: relative;
     background: #27263A;
     border-radius: 12px;
+    border: 1px solid transparent;
+}
+
+#item:hover {
+    border-color: #ae5eff;
 }
 
 .character-card-status {
@@ -17,6 +21,11 @@
     text-align: center;
 }
 
+.card-text {
+    position: relative;
+    bottom: 10px;
+}
+
 #character-card-name {
     position: relative;
     height: 39px;
@@ -26,16 +35,8 @@
     background: rgba(255, 191, 27, 0.74);
 }
 
-#character-card-name {
-    display: table-cell;
-    vertical-align: middle;
-}
-
 #character-card-img {
-    position: relative;
-    width: 150px;
     height: auto;
-    top: 22px;
 }
 
 a,
