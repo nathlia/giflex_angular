@@ -1,16 +1,19 @@
-<div class="card">
+<div class="artifact">
     <div *ngFor="let artifact of artifacts">
-        <div class="card-body" [routerLink]="['/artifact', chara.name , artifact.id , 'edit']">
+        <div class="artifact-box" [routerLink]="['/artifact', chara.name , artifact.id , 'edit']">
             <div class="null" *ngIf="artifact.id == null">
                 <div [routerLink]="['/artifact', 'add']"></div>
             </div>
-            <p>{{ artifact.set }}</p>
-            <p>{{ artifact.type }}</p>
-            <p>{{ artifact.mainstat }}</p>
-            <p>{{ artifact.substats[0] }}</p>
-            <p>{{ artifact.substats[1] }}</p>
-            <p>{{ artifact.substats[2] }}</p>
-            <p>{{ artifact.substats[3] }}</p>
+            <div class="set">{{ artifact.set }}</div>
+            <div class="type">{{ artifact.type }}</div>
+            <div class="mainstat">{{ artifact.mainstat }}</div>
+
+            <div class="substats">
+                <div class="substat">{{ artifact.substats[0] }}</div>
+                <div class="substat">{{ artifact.substats[1] }}</div>
+                <div class="substat">{{ artifact.substats[2] }}</div>
+                <div class="substat">{{ artifact.substats[3] }}</div>
+            </div>
         </div>
     </div>
 </div>

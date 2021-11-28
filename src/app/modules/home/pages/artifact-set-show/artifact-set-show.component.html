@@ -1,33 +1,32 @@
-<div class="container">
+<h3>Artifact Set</h3>
+<section class="artifact-set">
 
-    <h3>Artifact Set</h3>
-    <div class="row">
-        <div class="character" class="col-md-4">
-            <app-character-card [routerLink]="['/add-character', chara.name ,'edit']" [chara]="chara">
-            </app-character-card>
+    <div class="character-status-card">
+        <div class="item" id="item">
+            <app-character-card [routerLink]="['/add-character', chara.name ,'edit']" [chara]="chara"></app-character-card>
             <div class="character-card-status">
-                <p> Level: {{ chara.level }}</p>
-                <p> Crit Rate: {{ chara.critRate }}</p>
-                <p> Crit DMG: {{ chara.critDmg }}</p>
+                <p class="card-text"> Level: {{ chara.level }}</p>
+                <p class="card-text"> Crit Rate: {{ chara.critRate }}</p>
+                <p class="card-text"> Crit DMG: {{ chara.critDmg }}</p>
                 <a class="btn btn-primary" [routerLink]="['/add-character', chara.name ,'edit']">Edit</a>
             </div>
         </div>
+    </div>
 
-        <div id="artifacts" class="col-md-8">
-            <app-artifacts-tray></app-artifacts-tray>
-            <br>
-            <a class="btn btn-primary" [routerLink]="['/artifact', 'add']">Add artifact</a>
-            <br>
-            <br>
+    <section class="artifacts">
+        <div class="artifact">
+            <div class="artifact-box">
+                <app-artifacts-tray></app-artifacts-tray>
+            </div>
         </div>
+    </section>
+
+</section>
+<section class="buttons">
+    <div class="item">
+        <a class="btn btn-primary" id="back" [routerLink]="['/characters']">Back</a>
     </div>
-    <br>
-    <div class="row">
-        <div class="col-md-9">
-            <a class="btn btn-primary" [routerLink]="['/characters']">Back</a>
-        </div>
-        <div class="col-md-3">
-            <a class="btn btn-primary" [routerLink]="['/select-image', chara.name]">Generate Showcase</a>
-        </div>
+    <div class="item">
+        <a class="btn btn-primary" [routerLink]="['/select-image', chara.name]">Generate Showcase</a>
     </div>
-</div>
+</section>

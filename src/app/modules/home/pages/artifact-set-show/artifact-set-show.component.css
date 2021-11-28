@@ -1,9 +1,65 @@
+.artifact-set {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.character-status-card {
+    display: flex-start;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    align-items: center;
+    flex-direction: row;
+}
+
+p.card-text {
+    font-size: 16px;
+    line-height: 131.7%;
+}
+
 .character-card-status {
     position: relative;
     width: 151px;
     height: 175px;
     background: #27263A;
     border-radius: 12px;
-    padding-top: 1px;
+    padding-top: 7px;
     text-align: center;
+    margin-left: 16px;
+}
+
+.artifacts {
+    display: flex-start;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    flex-direction: row;
+    margin: auto;
+}
+
+.artifact {
+    position: relative;
+    width: 204px;
+    height: 224px;
+    margin: 27px;
+    background: #27263A;
+    border-radius: 12px;
+}
+
+.artifact-box {
+    text-align: center;
+    position: relative;
+    top: -56px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#back {
+    margin-left: 29px;
+    margin-top: 231px;
 }
