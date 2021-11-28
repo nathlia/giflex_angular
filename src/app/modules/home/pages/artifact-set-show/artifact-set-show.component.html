@@ -1,9 +1,9 @@
 <h3>Artifact Set</h3>
-<section class="artifact-set">
-
-    <div class="character-status-card">
+<div class="row" style="min-height: 600px;">
+    <div class="col-2">
         <div class="item" id="item">
-            <app-character-card [routerLink]="['/add-character', chara.name ,'edit']" [chara]="chara"></app-character-card>
+            <app-character-card [routerLink]="['/add-character', chara.name ,'edit']" [chara]="chara">
+            </app-character-card>
             <div class="character-card-status">
                 <p class="card-text"> Level: {{ chara.level }}</p>
                 <p class="card-text"> Crit Rate: {{ chara.critRate }}</p>
@@ -12,22 +12,18 @@
             </div>
         </div>
     </div>
-    <div id="artifacts-tray">
-        <section class="artifacts">
-            <div class="artifact">
-                <!-- <div class="artifact-box"> -->
-                <app-artifacts-tray></app-artifacts-tray>
-                <!-- </div> -->
-            </div>
-        </section>
+    <div id="artifacts-tray" class="col-9">
+        <app-artifacts-tray></app-artifacts-tray>
     </div>
-
-</section>
-<section class="buttons">
-    <div class="item">
-        <a class="btn btn-primary" id="back" [routerLink]="['/characters']">Back</a>
+</div>
+<br>
+<div class="row">
+    <div class="col-12">
+        <div class="float-left">
+            <a class="btn btn-primary" [routerLink]="['/characters']">Back</a>
+        </div>
+        <div class="float-right">
+            <a class="btn btn-primary" [routerLink]="['/select-image', chara.name]">Generate Showcase</a>
+        </div>
     </div>
-    <div class="item">
-        <a class="btn btn-primary" [routerLink]="['/select-image', chara.name]">Generate Showcase</a>
-    </div>
-</section>
+</div>

@@ -8,7 +8,7 @@ export class ArtifactsService {
   artifacts: any = [
     {
       id: 1,
-      set: "Virisdecent Veneer",
+      set: "Viridescent Venerer",
       type: "Flower",
       mainstat: "HP",
       substats: [] = [
@@ -38,7 +38,7 @@ export class ArtifactsService {
       substats: [] = [
         ''
       ]   
-    }
+    },    
   ]
 
   getArtifacts() {

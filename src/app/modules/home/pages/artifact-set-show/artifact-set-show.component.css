@@ -1,7 +1,8 @@
-.artifact-set {
+/* .artifact-set {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
+    flex-grow: 1;
 }
 
 .character-status-card {
@@ -17,16 +18,7 @@ p.card-text {
     line-height: 131.7%;
 }
 
-.character-card-status {
-    position: relative;
-    width: 151px;
-    height: 175px;
-    background: #27263A;
-    border-radius: 12px;
-    padding-top: 7px;
-    text-align: center;
-    margin-left: 16px;
-}
+
 
 .artifacts {
     display: flex;
@@ -36,6 +28,7 @@ p.card-text {
     flex-direction: row;
     align-items: flex-start;
     margin: auto;
+    flex: 1;
 }
 
 .buttons {
@@ -54,5 +47,16 @@ p.card-text {
 #artifacts-tray {
     position: relative;
     width: 1109px;
-    height: 722px
+    height: 325px;
+} */
+
+.character-card-status {
+    position: relative;
+    width: 151px;
+    height: 175px;
+    background: #27263A;
+    border-radius: 12px;
+    padding-top: 7px;
+    text-align: center;
+    margin-left: 16px;
 }
