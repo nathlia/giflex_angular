@@ -7,6 +7,12 @@
     border: 1px solid #13121d;
 }
 
+.type {
+    font-size: 16px;
+    line-height: 131.7%;
+    text-align: center;
+}
+
 .set {
     font-size: 17px;
     line-height: 42px;
@@ -16,27 +22,19 @@
 
 .mainstat {
     background: rgba(157, 122, 255, 0.33);
-    position: relative;
-    top: -18px;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    margin-bottom: -36px;
     color: #FFFFFF;
 }
 
 .substat {
-    margin-bottom: -10px;
+    padding: 5px;
 }
 
 .artifact-set-type {
     font-size: 16px;
     line-height: 131.7%;
-    position: relative;
-    top: -59px;
-    left: 72px;
 }
 
-.artifact {
+.card {
     position: relative;
     width: 204px;
     height: 224px;
@@ -47,6 +45,4 @@
 
 .artifact-box {
     text-align: center;
-    position: relative;
-    top: -56px;
 }

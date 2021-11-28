@@ -29,26 +29,13 @@ p.card-text {
 }
 
 .artifacts {
-    display: flex-start;
+    display: flex;
     flex-wrap: wrap;
     flex-flow: row wrap;
+    justify-content: flex-start;
     flex-direction: row;
+    align-items: flex-start;
     margin: auto;
-}
-
-.artifact {
-    position: relative;
-    width: 204px;
-    height: 224px;
-    margin: 27px;
-    background: #27263A;
-    border-radius: 12px;
-}
-
-.artifact-box {
-    text-align: center;
-    position: relative;
-    top: -56px;
 }
 
 .buttons {
@@ -62,4 +49,10 @@ p.card-text {
 #back {
     margin-left: 29px;
     margin-top: 231px;
+}
+
+#artifacts-tray {
+    position: relative;
+    width: 1109px;
+    height: 722px
 }
