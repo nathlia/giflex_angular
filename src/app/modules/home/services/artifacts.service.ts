@@ -31,12 +31,12 @@ export class ArtifactsService {
       ]   
     },
     {
-      id: null,
-      set: null,
-      type: null,
-      mainstat: null,
+      id: '',
+      set: '',
+      type: '',
+      mainstat: '',
       substats: [] = [
-        null
+        ''
       ]   
     }
   ]

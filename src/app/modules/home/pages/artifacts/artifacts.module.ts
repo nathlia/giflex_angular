@@ -7,6 +7,7 @@ import { AddSubstatsComponent } from './add-substats/add-substats.component';
 import { ArtifactsComponent } from './artifacts.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,
     RouterModule,
+    SharedModule,
     ArtifactsRoutingModule
   ]
 })

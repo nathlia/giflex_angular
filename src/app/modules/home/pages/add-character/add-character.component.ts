@@ -10,24 +10,9 @@ import { CharactersService } from '../../services/characters.service';
 })
 export class AddCharacterComponent implements OnInit {
 
-  chara: any;
-  sub: Subscription = new Subscription;
-
-  constructor(
-    private charactersService: CharactersService,
-    private route: ActivatedRoute) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.sub = this.route.params.subscribe(
-      (paramns: any) => {
-        let name = paramns['name'];
-        this.chara = this.charactersService.getCharaByName(name);
-      }
-    );
-  }  
-   
-  ngOnDestroy() {
-    this.sub.unsubscribe();
-  }
 
+  }  
 }
