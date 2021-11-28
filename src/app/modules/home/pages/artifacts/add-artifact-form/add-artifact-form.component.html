@@ -3,7 +3,7 @@
         <div class="col-mb-2">
             <app-character-card [chara]="chara"></app-character-card>
             <div class="col">
-                <a class="btn btn-primary" type="button" [routerLink]="['/artifacts-set', chara.name]">Back</a>
+                <button class="btn btn-primary" type="button" [routerLink]="['/artifacts-set', chara.name]">Back</button>
             </div>
         </div>
         <div class="col-sm-6">
@@ -14,13 +14,29 @@
                 </div>
                 <div class="mb-6">
                     <label for="nome" class="form-label">Set</label>
-                    <input class="active" class="form-control" [(ngModel)]="artifact.set" type="text" name="critRate" maxlength="6">
+                    <input class="active" class="form-control" [(ngModel)]="artifact.set" type="text" name="set">
                 </div>
                 <div class="mb-6">
                     <label or="exampleInputEmail1" class="form-label">Main Stat</label>
-                    <input class="active" class="form-control" [(ngModel)]="artifact.mainstat" type="text" name="critDmg" maxlength="6">
+                    <input class="active" class="form-control" [(ngModel)]="artifact.mainstat" type="text" name="mainstat">
                 </div>
-                <app-add-substats></app-add-substats>
+
+                <div class="mb-6">
+                    <label for="disabledTextInput" class="form-label">1:</label>
+                    <input class="form-control" [(ngModel)]="artifact.substats[0]" type="text" name="substat1">
+                </div>
+                <div class="mb-6">
+                    <label for="nome" class="form-label">2:</label>
+                    <input class="active" class="form-control" [(ngModel)]="artifact.substats[1]" type="text" name="substat2">
+                </div>
+                <div class="mb-6">
+                    <label or="exampleInputEmail1" class="form-label">3:</label>
+                    <input class="active" class="form-control" [(ngModel)]="artifact.substats[2]" type="text" name="substat3">
+                </div>
+                <div class="mb-6">
+                    <label or="exampleInputEmail1" class="form-label">4:</label>
+                    <input class="active" class="form-control" [(ngModel)]="artifact.substats[3]" type="text" name="substat4">
+                </div>
 
                 <button id="btn-save" type="submit" [routerLink]="['/artifacts-set', chara.name]" class="btn btn-primary">Save</button>
             </form>
