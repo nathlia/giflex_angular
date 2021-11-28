@@ -3,6 +3,7 @@
     width: 181px;
     margin: 5px;
     background: rgba(38, 38, 38, 0.36);
+    border: 0;
 }
 
 .artifact-box {
@@ -45,11 +46,9 @@
 
 .substats {
     position: relative;
-    font-size: 15px;
     line-height: 25px;
-    color: rgba(255, 255, 255, 0.74);
-    margin: 5px;
-    margin-bottom: 12px;
+    margin-bottom: 17px;
     top: 31px;
     padding: 1px;
+    height: max-content;
 }

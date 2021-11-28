@@ -69,6 +69,12 @@ a {
     padding: 18px 18px 18px 46px;
 }
 
+@media only screen and (min-width: 1200px) {
+    .container {
+        max-width: 1372px;
+    }
+}
+
 
 /* custom form */
 
