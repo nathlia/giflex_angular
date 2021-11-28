@@ -13,6 +13,7 @@ import { HomeRoutingModule } from './modules/home/home-routing.module';
 import { RouterModule } from '@angular/router';
 import { CharactersService } from './modules/home/services/characters.service';
 import { SelectImageService } from './modules/home/services/select-image.service';
+import { ArtifactsService } from './modules/home/services/artifacts.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { SelectImageService } from './modules/home/services/select-image.service
     CoreRoutingModule,
     HomeRoutingModule
   ],
-  providers: [CharactersService, SelectImageService],
+  providers: [CharactersService, SelectImageService, ArtifactsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

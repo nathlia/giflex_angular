@@ -6,6 +6,7 @@ import { AddArtifactFormComponent } from './add-artifact-form/add-artifact-form.
 import { AddSubstatsComponent } from './add-substats/add-substats.component';
 import { ArtifactsComponent } from './artifacts.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule,
     ArtifactsRoutingModule
   ]

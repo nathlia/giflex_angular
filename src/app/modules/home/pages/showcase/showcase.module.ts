@@ -7,7 +7,6 @@ import { RouterModule } from '@angular/router';
 import { ShowcaseArtifactComponent } from './showcase-artifact/showcase-artifact.component';
 import { ShowcaseSubstatsComponent } from './showcase-substats/showcase-substats.component';
 
-
 @NgModule({
   declarations: [
     ShowcaseComponent,

@@ -11,6 +11,7 @@ import { SelectImageService } from '../../services/select-image.service';
 })
 export class ShowcaseComponent implements OnInit {  
 
+  artifacts: any;
   image: any;
   chara: any;
   sub: Subscription = new Subscription;

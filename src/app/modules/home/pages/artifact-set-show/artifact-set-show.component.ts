@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { ArtifactsService } from '../../services/artifacts.service';
 import { CharactersService } from '../../services/characters.service';
 
 @Component({
@@ -10,10 +11,14 @@ import { CharactersService } from '../../services/characters.service';
 })
 export class ArtifactSetShowComponent implements OnInit {
 
+  @Input('artifact') artifact: any;
+
+  artifacts: any;
   chara: any;
   sub: Subscription = new Subscription;
 
   constructor(
+    private artifactsService: ArtifactsService,
     private charactersService: CharactersService,
     private route: ActivatedRoute) { }
 
@@ -24,6 +29,8 @@ export class ArtifactSetShowComponent implements OnInit {
         this.chara = this.charactersService.getCharaByName(name);
       }
     );
+
+    this.artifacts = this.artifactsService.getArtifacts();
   }  
    
   ngOnDestroy() {

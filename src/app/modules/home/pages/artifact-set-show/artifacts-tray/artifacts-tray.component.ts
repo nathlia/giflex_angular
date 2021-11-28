@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ArtifactsService } from '../../../services/artifacts.service';
 
 @Component({
   selector: 'app-artifacts-tray',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArtifactsTrayComponent implements OnInit {
 
-  constructor() { }
+  artifacts: any;
+
+  constructor(
+    private artifactsService: ArtifactsService
+  ) { }
 
   ngOnInit(): void {
+    this.artifacts = this.artifactsService.getArtifacts();
   }
 
 }

@@ -1,1 +1,12 @@
-<p>artifacts-tray works!</p>
+<div class="card">
+    <div *ngFor="let artifact of artifacts">
+        <div class="card-body" [routerLink]="['/artifact', artifact.id , 'edit']">
+            <div class="null" *ngIf="artifact.id == null" [routerLink]="['/artifact', artifact.id , 'add']"></div>
+            <p>{{ artifact.set }}</p>
+            <p>{{ artifact.type }}</p>
+            <p>{{ artifact.mainstat }}</p>
+            <p>{{ artifact.substats }}</p>
+        </div>
+
+    </div>
+</div>

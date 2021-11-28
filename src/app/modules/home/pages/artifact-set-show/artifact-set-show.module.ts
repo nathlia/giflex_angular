@@ -6,8 +6,8 @@ import { ArtifactsTrayComponent } from './artifacts-tray/artifacts-tray.componen
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ArtifactSetShowComponent } from './artifact-set-show.component';
-import { CharactersService } from '../../services/characters.service';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { ArtifactsService } from '../../services/artifacts.service';
 
 @NgModule({
   declarations: [
@@ -21,6 +21,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
 
     RouterModule,
     ArtifactSetShowRoutingModule
-  ]  
+  ]
 })
 export class ArtifactSetShowModule { }
