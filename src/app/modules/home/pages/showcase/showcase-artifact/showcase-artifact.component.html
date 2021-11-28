@@ -1,16 +1,16 @@
-<div class="card">
-    <div class="artifact-box">
-        <div class="set-name">Virisdecent Veneer</div>
-        <div class="set-type">Flower</div>
-        <div class="main-stat">HP</div>
+<div *ngFor="let artifact of artifacts">
+    <div class="card">
+        <div class="artifact-box">
+            <div class="set-name">{{ artifact.set }}</div>
+            <div class="set-type">{{ artifact.type }}</div>
+            <div class="main-stat">{{ artifact.mainstat }}</div>
 
-        <div class="substats">
-
-            <!-- <ul class="list-group list-group-flush"></ul> -->
-            <!-- <li *ngFor="let substat of substats"> </li> -->
-            <app-showcase-substats></app-showcase-substats>
-
+            <div class="substats">
+                <div class="substat">{{ artifact.substats[0] }}</div>
+                <div class="substat">{{ artifact.substats[1] }}</div>
+                <div class="substat">{{ artifact.substats[2] }}</div>
+                <div class="substat">{{ artifact.substats[3] }}</div>
+            </div>
         </div>
-
     </div>
 </div>

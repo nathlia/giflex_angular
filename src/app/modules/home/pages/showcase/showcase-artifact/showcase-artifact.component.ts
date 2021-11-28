@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ArtifactsService } from '../../../services/artifacts.service';
 
 @Component({
   selector: 'app-showcase-artifact',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowcaseArtifactComponent implements OnInit {
 
-  constructor() { }
+  artifacts: any; 
+
+  constructor(
+    private artifactsService: ArtifactsService
+  ) {}
 
   ngOnInit(): void {
-  }
-
+    this.artifacts = this.artifactsService.getArtifacts();
+  }  
 }

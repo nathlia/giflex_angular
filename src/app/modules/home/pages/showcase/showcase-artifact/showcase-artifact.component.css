@@ -52,3 +52,29 @@
     padding: 1px;
     height: max-content;
 }
+
+#artifacts-tray {
+    position: relative;
+    width: 400px;
+    height: 669px;
+    top: -72px;
+    left: 633px;
+}
+
+.artifacts {
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: auto;
+}
+
+.substat {
+    position: relative;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.74);
+    margin: 5px;
+    margin-bottom: 12px;
+}

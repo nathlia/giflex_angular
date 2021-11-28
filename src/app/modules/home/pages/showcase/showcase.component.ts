@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { ArtifactsService } from '../../services/artifacts.service';
 import { CharactersService } from '../../services/characters.service';
 import { SelectImageService } from '../../services/select-image.service';
 
@@ -19,6 +20,7 @@ export class ShowcaseComponent implements OnInit {
   constructor(
     private charactersService: CharactersService,
     private selectImageservice: SelectImageService,
+    private artifactsService: ArtifactsService, 
     private route: ActivatedRoute
     )
      { }
@@ -37,9 +39,13 @@ export class ShowcaseComponent implements OnInit {
         this.image = this.selectImageservice.getImageById(id);
       }
     );
+
+    this.artifacts = this.artifactsService.getArtifacts();
   }  
    
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
+
+  
 }
