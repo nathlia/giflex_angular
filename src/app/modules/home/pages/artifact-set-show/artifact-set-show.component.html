@@ -1,8 +1,10 @@
-<h3>Artifact Set</h3>
-
 <div class="container">
+
+    <h3>Artifact Set</h3>
+
     <div class="character">
-        <app-character-card [routerLink]="['/add-character', chara.name ,'edit']" [chara]="chara"></app-character-card>
+        <app-character-card [routerLink]="['/add-character', chara.name ,'edit']" [chara]="chara">
+        </app-character-card>
         <div class="character-card-status">
             <p> Level: {{ chara.level }}</p>
             <p> Crit Rate: {{ chara.critRate }}</p>
@@ -10,7 +12,8 @@
             <a class="btn btn-primary" [routerLink]="['/add-character', chara.name ,'edit']">Edit</a>
         </div>
     </div>
-    <div class="artifacts">
+
+    <div class="artifact">
         <br>
         <br>
         <a class="btn btn-primary" [routerLink]="['/artifact', 'edit']">Edit artifact</a>
@@ -19,6 +22,11 @@
         <a class="btn btn-primary" [routerLink]="['/artifact', 'add']">Add artifact</a>
         <br>
         <br>
+    </div>
+
+    <div class="buttons">
+        <a class="btn btn-primary" [routerLink]="['/characters']">Back</a>
         <a class="btn btn-primary" [routerLink]="['/select-image', chara.name]">Generate Showcase</a>
     </div>
+
 </div>
