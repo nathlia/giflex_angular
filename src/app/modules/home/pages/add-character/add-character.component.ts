@@ -29,4 +29,5 @@ export class AddCharacterComponent implements OnInit {
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
+
 }

@@ -9,7 +9,8 @@ import { ImageCardComponent } from './image-card/image-card.component';
 @NgModule({
   declarations: [
     SelectImageShowcaseComponent,
-    ImageCardComponent
+    ImageCardComponent,
+
   ],
   imports: [
     CommonModule,

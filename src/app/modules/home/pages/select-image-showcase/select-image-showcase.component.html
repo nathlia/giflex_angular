@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row row-cols-2">
         <div *ngFor="let image of images">
-            <div class="col-" id="image-card">
+            <div class="col" id="image">
                 <app-image-card [routerLink]="['/showcase', chara.name, image.id]" [chara]="chara" [image]="image"></app-image-card>
             </div>
         </div>

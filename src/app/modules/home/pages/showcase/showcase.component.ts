@@ -11,9 +11,6 @@ import { SelectImageService } from '../../services/select-image.service';
 })
 export class ShowcaseComponent implements OnInit {  
 
-  // @Input('chara') chara: any;
-  // @Input('image') image: any;
-
   image: any;
   chara: any;
   sub: Subscription = new Subscription;

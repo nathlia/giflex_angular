@@ -1,3 +1,30 @@
-<p>showcase works!</p>
-<p>chara: {{ chara.name }}</p>
-<p>image: {{ image.id }}</p>
+<div id="main" class="container">
+    <div class="image">
+        <img src="../../../../../../assets/img/showcase/{{ chara.name }}/{{ image.id }}.jpg">
+    </div>
+    <div class="showcase-data">
+        <div class="character-status">
+            <ul class="list-group">
+                <li class="list-group-item" id="rate">
+                    <div class="rate">
+                        <p>CRIT Rate: {{ chara.critRate }}</p>
+                    </div>
+                </li>
+                <li class="list-group-item" id="dmg">
+                    <div class="damage">
+                        <p>CRIT DMG: {{ chara.critDmg }}</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="artifacts-tray">
+            <section class="artifacts">
+                <!-- <div *ngFor="let artifact of artifacts"> -->
+                <div class="artifact">
+                    <app-showcase-artifact></app-showcase-artifact>
+                </div>
+                <!-- </div> -->
+            </section>
+        </div>
+    </div>
+</div>
