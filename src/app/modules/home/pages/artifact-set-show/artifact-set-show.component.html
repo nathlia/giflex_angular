@@ -1,36 +1,37 @@
 <div class="container">
 
     <h3>Artifact Set</h3>
+    <div class="row">
+        <div class="character" class="col-md-4">
+            <app-character-card [routerLink]="['/add-character', chara.name ,'edit']" [chara]="chara">
+            </app-character-card>
+            <div class="character-card-status">
+                <p> Level: {{ chara.level }}</p>
+                <p> Crit Rate: {{ chara.critRate }}</p>
+                <p> Crit DMG: {{ chara.critDmg }}</p>
+                <a class="btn btn-primary" [routerLink]="['/add-character', chara.name ,'edit']">Edit</a>
+            </div>
+        </div>
 
-    <div class="character">
-        <app-character-card [routerLink]="['/add-character', chara.name ,'edit']" [chara]="chara">
-        </app-character-card>
-        <div class="character-card-status">
-            <p> Level: {{ chara.level }}</p>
-            <p> Crit Rate: {{ chara.critRate }}</p>
-            <p> Crit DMG: {{ chara.critDmg }}</p>
-            <a class="btn btn-primary" [routerLink]="['/add-character', chara.name ,'edit']">Edit</a>
+        <div id="artifacts" class="col-md-8">
+            <app-artifacts-tray></app-artifacts-tray>
+            <br>
+            <br>
+            <a class="btn btn-primary" [routerLink]="['/artifact', 'edit']">Edit artifact</a>
+            <br>
+            <br>
+            <a class="btn btn-primary" [routerLink]="['/artifact', 'add']">Add artifact</a>
+            <br>
+            <br>
         </div>
     </div>
-
-    <div class="artifact">
-        <br>
-        <br>
-        <a class="btn btn-primary" [routerLink]="['/artifact', 'edit']">Edit artifact</a>
-        <br>
-        <br>
-        <a class="btn btn-primary" [routerLink]="['/artifact', 'add']">Add artifact</a>
-        <br>
-        <br>
-    </div>
-
-    <div class="buttons">
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+    <br>
+    <div class="row">
+        <div class="col-md-9">
             <a class="btn btn-primary" [routerLink]="['/characters']">Back</a>
         </div>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <div class="col-md-3">
             <a class="btn btn-primary" [routerLink]="['/select-image', chara.name]">Generate Showcase</a>
         </div>
     </div>
-
 </div>
