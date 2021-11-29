@@ -29,16 +29,7 @@ export class ArtifactsService {
         'CRIT Rate%+6',
         'CRIT DMG%+20'
       ]   
-    },
-    {
-      id: '',
-      set: '',
-      type: '',
-      mainstat: '',
-      substats: [] = [
-        ''
-      ]   
-    },    
+    }   
   ]
 
   getArtifacts() {

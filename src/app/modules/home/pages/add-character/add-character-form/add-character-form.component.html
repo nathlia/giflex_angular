@@ -3,7 +3,7 @@
         <div class="col-mb-2">
             <app-character-card [chara]="chara"></app-character-card>
             <div class="col">
-                <button class="btn btn-primary" type="button" [routerLink]="['/artifacts-set', chara.name]">Back</button>
+                <button type="button" class="btn btn-primary" [routerLink]="['/artifacts-set', chara.name]">Back</button>
             </div>
         </div>
         <div class="col-mb-4">
@@ -11,6 +11,10 @@
                 <div class="mb-3">
                     <label for="disabledTextInput" class="form-label">Nome</label>
                     <input class="form-control" disabled [(ngModel)]="chara.name" id="disabled" type="text" name="name">
+                </div>
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Level</label>
+                    <input class="active" class="form-control" [(ngModel)]="chara.level" type="text" name="level" maxlength="2">
                 </div>
                 <div class="mb-3">
                     <label for="nome" class="form-label">Crit Rate</label>
