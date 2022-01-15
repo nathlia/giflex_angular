@@ -1,13 +1,11 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { HeaderTextComponent } from './components/header-text/header-text.component';
 import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
   declarations: [
-     NavbarComponent,
-     HeaderTextComponent
+     NavbarComponent
     ],
   imports: [
     CommonModule,
@@ -15,8 +13,7 @@ import { AppRoutingModule } from '../app-routing.module';
     AppRoutingModule
   ],
   exports: [
-    NavbarComponent, 
-    HeaderTextComponent
+    NavbarComponent
   ]
 })
 export class CoreModule {

@@ -15,12 +15,15 @@ import { CharactersService } from './modules/home/services/characters.service';
 import { SelectImageService } from './modules/home/services/select-image.service';
 import { ArtifactsService } from './modules/home/services/artifacts.service';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,    
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     SharedModule,
     CoreModule,
     NgbModule,
@@ -29,7 +32,8 @@ import { ArtifactsService } from './modules/home/services/artifacts.service';
     RouterModule,
     AppRoutingModule,
     CoreRoutingModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    
   ],
   providers: [CharactersService, SelectImageService, ArtifactsService],
   bootstrap: [AppComponent]
