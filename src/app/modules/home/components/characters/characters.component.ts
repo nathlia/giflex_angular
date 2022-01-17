@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Character } from 'src/app/models/character.model';
+import { Character } from 'src/app/modules/home/models/character.model';
 import { getLineAndCharacterOfPosition } from 'typescript';
 import { CharactersService } from '../../services/characters.service';
 
@@ -15,10 +15,10 @@ export class CharactersComponent implements OnInit {
   constructor(private charactersService: CharactersService) {}
 
   ngOnInit(): void {
-    this.getCharacters();    
+    this.getCharacter();    
   }
 
-  getCharacters(): void {
+  getCharacter(): void {
     this.charactersService.getAll().subscribe({
       next: (data) => {
         this.characters = data;
