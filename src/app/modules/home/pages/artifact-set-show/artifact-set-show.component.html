@@ -2,13 +2,13 @@
 <div class="row" style="min-height: 600px;">
     <div class="col-2">
         <div class="item" id="item">
-            <app-character-card [routerLink]="['/add-character',  chara.id, chara.name ,'edit']" [chara]="chara">
+            <app-character-card [routerLink]="['/add-character',  character.id, character.name ,'edit']" [chara]="character">
             </app-character-card>
             <div class="character-card-status">
-                <p class="card-text"> Level: {{ chara.level }}</p>
-                <p class="card-text"> Crit Rate: {{ chara.critRate }}</p>
-                <p class="card-text"> Crit DMG: {{ chara.critDmg }}</p>
-                <a class="btn btn-primary" [routerLink]="['/add-character', chara.id, chara.name ,'edit']">Edit</a>
+                <p class="card-text"> Level: {{ character.level }}</p>
+                <p class="card-text"> Crit Rate: {{ character.critRate }}</p>
+                <p class="card-text"> Crit DMG: {{ character.critDmg }}</p>
+                <a class="btn btn-primary" [routerLink]="['/add-character', character.id, character.name ,'edit']">Edit</a>
             </div>
         </div>
     </div>
@@ -23,7 +23,7 @@
             <a class="btn btn-primary" [routerLink]="['/characters']">Back</a>
         </div>
         <div class="float-right">
-            <a class="btn btn-primary" [routerLink]="['/select-image', chara.id, chara.name]">Generate Showcase</a>
+            <a class="btn btn-primary" [routerLink]="['/select-image', character.id, character.name]">Generate Showcase</a>
         </div>
     </div>
 </div>

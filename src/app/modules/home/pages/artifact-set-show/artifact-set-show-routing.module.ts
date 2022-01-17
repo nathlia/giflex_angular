@@ -8,7 +8,7 @@ const routes: Routes = [
   {
     path: 'artifacts-set/:id/:name', component: ArtifactSetShowComponent,
     // children: [
-    //   { path: '/artifact/edit', component: ArtifactsComponent },
+    //   { path: '/artifact/:id/edit', component: ArtifactsComponent },s
     //   { path: '/artifact/add', component: ArtifactsComponent },
     //   { path: '/character/edit', component: AddCharacterComponent }
     // ]

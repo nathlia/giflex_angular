@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { Character } from '../../../models/character.model';
 import { ArtifactsService } from '../../../services/artifacts.service';
 import { CharactersService } from '../../../services/characters.service';
 
@@ -11,26 +12,37 @@ import { CharactersService } from '../../../services/characters.service';
 })
 export class ArtifactsTrayComponent implements OnInit {
 
-  chara: any;
+  @Input() character: Character = { 
+      level: '',
+      critRate: '',
+      critDmg: ''   
+  };
+
   artifacts: any;
 
   sub: Subscription = new Subscription;
 
   constructor(
     private artifactsService: ArtifactsService,
-    private charactersService: CharactersService,
+    private characterService: CharactersService,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    this.sub = this.route.params.subscribe(
-      (paramns: any) => {
-        let name = paramns['name'];
-        this.chara = this.charactersService.getCharaByName(name);
-      }
-    );
+
+    this.getCharacterById(this.route.snapshot.params["id"]);
 
     this.artifacts = this.artifactsService.getArtifacts();
+  }
+
+  getCharacterById(id: string) {
+    this.characterService.get(id).subscribe({
+      next: (data) => {
+        this.character = data;
+        console.log(data);
+      },
+      error: (e) => console.error(e)
+    });    
   }
 
   ngOnDestroy() {

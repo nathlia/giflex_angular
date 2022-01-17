@@ -9,7 +9,7 @@ const routes: Routes = [
     component: ArtifactsComponent,
     children: [
       { path: ':id/:name/add', component: AddArtifactFormComponent },
-      { path: ':id/:name/:id/edit', component: AddArtifactFormComponent }
+      { path: ':charaId/:name/:artId/edit', component: AddArtifactFormComponent }
     ]
   },
 ];

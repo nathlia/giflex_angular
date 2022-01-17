@@ -14,18 +14,17 @@
                 </div>
                 <div class="mb-3">
                     <label for="level" class="form-label">Level</label>
-                    <input class="active" class="form-control" [(ngModel)]="character.level" type="text" name="level" maxlength="2">
+                    <input class="active" class="form-control" [(ngModel)]="character.level" type="number" name="level" maxlength="2">
                 </div>
                 <div class="mb-3">
                     <label for="critRate" class="form-label">Crit Rate</label>
-                    <input class="active" class="form-control" [(ngModel)]="character.critRate" type="text" name="critRate" maxlength="6">
+                    <input class="active" class="form-control" [(ngModel)]="character.critRate" type="number" name="critRate" maxlength="6">
                 </div>
                 <div class="mb-3">
                     <label for="critDmg" class="form-label">Crit Dmg</label>
-                    <input class="active" class="form-control" [(ngModel)]="character.critDmg" type="text" name="critDmg" maxlength="6">
+                    <input class="active" class="form-control" [(ngModel)]="character.critDmg" type="number" name="critDmg" maxlength="6">
                 </div>
-
-                <button id="btn-save" type="submit" [routerLink]="['/artifacts-set', character.id, character.name]" class="btn btn-primary">Save</button>
+                <button id="btn-save" type="submit" [routerLink]="['/artifacts-set', character.id, character.name]" class="btn btn-primary" (click)="editCharacter()">Save</button>
             </form>
         </div>
     </div>

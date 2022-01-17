@@ -1,5 +1,5 @@
 export class Character {
-    id?: any;
+    id?: number;
     name?: string;
     level?: string;
     critRate?: string;

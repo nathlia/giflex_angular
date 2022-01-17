@@ -12,66 +12,36 @@ import { CharactersService } from '../../services/characters.service';
 })
 export class ArtifactSetShowComponent implements OnInit {
 
-  // chara?: Character[];
-
-  // sub: Subscription = new Subscription();
-
-  // constructor(
-  //   private charactersService: CharactersService,
-  //   private route: ActivatedRoute) {}
-
-  // ngOnInit(): void {
-  //   this.getCharacters();    
-
-  //   this.sub = this.route.params.subscribe((paramns: any) => {
-  //     let name = paramns['name'];
-  //     this.getcharacterByName(name);
-  //   });
-          
-  // }
-
-  // getCharacters(): void {
-  //   this.charactersService.getAll().subscribe({
-  //     next: (data) => {
-  //       this.chara = data;
-  //       console.log(data);
-  //     },
-  //     error: (e) => console.error(e)
-  //   });
-  // }
-  
-  // getcharacterByName(name: string): void {
-  //   this.charactersService.findByName(name).subscribe({
-  //     next: (data) => {
-  //       this.chara = data;
-  //       console.log(data);
-  //     },
-  //     error: (e) => console.error(e)
-  //   });
-  // }
+  character: Character = {
+    level: '',
+    critRate: '',
+    critDmg: ''
+  };
 
   @Input('artifact') artifact: any;
 
   artifacts: any;
-  chara: any;
-  sub: Subscription = new Subscription();
 
   constructor(
     private artifactsService: ArtifactsService,
-    private charactersService: CharactersService,
+    private characterService: CharactersService,
     private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-    this.sub = this.route.params.subscribe((paramns: any) => {
-      let name = paramns['name'];
-      this.chara = this.charactersService.getCharaByName(name);
-    });
+
+    this.getCharacterById(this.route.snapshot.params["id"]);
 
     this.artifacts = this.artifactsService.getArtifacts();
   }
 
-  ngOnDestroy() {
-    this.sub.unsubscribe();
+  getCharacterById(id: string) {
+    this.characterService.get(id).subscribe({
+      next: (data) => {
+        this.character = data;
+        console.log(data);
+      },
+      error: (e) => console.error(e)
+    });    
   }
 }

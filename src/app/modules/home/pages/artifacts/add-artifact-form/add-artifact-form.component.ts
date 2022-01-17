@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ArtifactSetType } from '../../../models/artifact-set-type.model';
 import { ArtifactType } from '../../../models/artifact-type.model';
+import { Character } from '../../../models/character.model';
 import { Substat } from '../../../models/substat.model';
 import { ArtifactSetTypeService } from '../../../services/artifact-set-type.service';
 import { ArtifactTypeService } from '../../../services/artifact-type.service';
@@ -21,19 +22,27 @@ export class AddArtifactFormComponent implements OnInit {
   set?: ArtifactSetType[];
   substat?: Substat[];
 
+  character: Character = {
+    name: '',
+    level: '',
+    critRate: '',
+    critDmg: ''
+  };
+
+  //! old
   artifact: any;
-  chara: any;
   subscription: Subscription = new Subscription;
+  //! old
 
   constructor(
     private artifactTypeService: ArtifactTypeService,
     private artifactSetTypeService: ArtifactSetTypeService,
     private substatService: SubstatService,
     private artifactsService: ArtifactsService,
-    private charactersService: CharactersService,
+    private characterService: CharactersService,
     private route: ActivatedRoute) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {   
 
     this.getType();
     this.getSet();
@@ -41,18 +50,23 @@ export class AddArtifactFormComponent implements OnInit {
 
     this.subscription = this.route.params.subscribe(
       (paramns: any) => {
-        let id = paramns['id'];
+        let id = paramns['artId'];
         this.artifact = this.artifactsService.getArtifactById(id);
       }
     );
 
-    this.subscription = this.route.params.subscribe(
-      (paramns: any) => {
-        let name = paramns['name'];
-        this.chara = this.charactersService.getCharaByName(name);
-      }
-    );
+    this.getCharacterById(this.route.snapshot.params["charaId"]);
   }  
+
+  getCharacterById(id: string) {
+    this.characterService.get(id).subscribe({
+      next: (data) => {
+        this.character = data;
+        console.log(data);
+      },
+      error: (e) => console.error(e)
+    });    
+  }
 
   getType() {
     this.artifactTypeService.getAll().subscribe({

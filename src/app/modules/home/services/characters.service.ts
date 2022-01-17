@@ -25,7 +25,7 @@ export class CharactersService {
   }
 
   update(id: any, data: any): Observable<any> {
-    return this.http.put(`${baseUrl}/${id}`, data);
+    return this.http.put(`${baseUrl}/${id}/edit`, data);
   }
 
   findByName(name: any): Observable<Character[]> {
@@ -39,14 +39,6 @@ export class CharactersService {
       level: '90',
       critRate: '70',
       critDmg: '180.5',
-  
-    },
-    {
-      id: 2,
-      name: "Tartaglia",
-      level: '90',
-      critRate: '75',
-      critDmg: '135.7',
   
     }
   ];
