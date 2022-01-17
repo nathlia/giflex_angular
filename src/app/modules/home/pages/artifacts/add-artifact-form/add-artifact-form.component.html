@@ -1,44 +1,68 @@
 <div class="container">
     <div class="row">
-        <div class="col-mb-2">
-            <app-character-card [chara]="chara"></app-character-card>
+        <div class="col-md-2">
+            <app-character-card [routerLink]="['/add-character',  chara.id, chara.name ,'edit']" [chara]="chara">
+            </app-character-card>
             <div class="col">
-                <button class="btn btn-primary" type="button" [routerLink]="['/artifacts-set', chara.name]">Back</button>
+                <button class="btn btn-primary" type="button" [routerLink]="['/artifacts-set',  chara.id, chara.name]">Back</button>
             </div>
         </div>
-        <div class="col-sm-6">
-            <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-                <div class="mb-6">
-                    <label for="disabledTextInput" class="form-label">Type</label>
-                    <input class="form-control" disabled [(ngModel)]="artifact.type" id="disabled" type="text" name="type">
-                </div>
-                <div class="mb-6">
-                    <label for="nome" class="form-label">Set</label>
-                    <input class="active" class="form-control" [(ngModel)]="artifact.set" type="text" name="set">
-                </div>
-                <div class="mb-6">
-                    <label or="exampleInputEmail1" class="form-label">Main Stat</label>
-                    <input class="active" class="form-control" [(ngModel)]="artifact.mainstat" type="text" name="mainstat">
+        <div class="col-10">
+            <form class="row g-3" #f="ngForm" (ngSubmit)="onSubmit(f)">
+                <div class="col-md-6">
+                    <div class="col-12">
+                        <label for="type" class="col-form-label">Type:</label>
+                        <select class="form-select" aria-label="Default select type">
+                            <option selected>Select</option>
+                            <option *ngFor="let type of type">
+                                {{type.name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <label for="set" class="col-form-label">Set:</label>
+                        <select class="form-select" aria-label="Default select set">
+                            <option selected>Select</option>
+                            <option *ngFor="let set of set">
+                                {{set.name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="substat" class="col-form-label">Main Stat:</label>
+                        <select class="form-select" aria-label="Default select set">
+                            <option selected>Select</option>
+                            <option *ngFor="let substat of substat">
+                                {{substat.name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="mainstat-value" class="col-form-label">Value:</label>
+                        <input class="active" class="form-control" [(ngModel)]="artifact.mainstat" type="text" name="mainstat">
+                    </div>
                 </div>
 
-                <div class="mb-6">
-                    <label for="disabledTextInput" class="form-label">1:</label>
-                    <input class="form-control" [(ngModel)]="artifact.substats[0]" type="text" name="substat1">
-                </div>
-                <div class="mb-6">
-                    <label for="nome" class="form-label">2:</label>
-                    <input class="active" class="form-control" [(ngModel)]="artifact.substats[1]" type="text" name="substat2">
-                </div>
-                <div class="mb-6">
-                    <label or="exampleInputEmail1" class="form-label">3:</label>
-                    <input class="active" class="form-control" [(ngModel)]="artifact.substats[2]" type="text" name="substat3">
-                </div>
-                <div class="mb-6">
-                    <label or="exampleInputEmail1" class="form-label">4:</label>
-                    <input class="active" class="form-control" [(ngModel)]="artifact.substats[3]" type="text" name="substat4">
+                <div class="col-md-6" id="substats">
+                    <h3>Substats:</h3>
+                    <div class="col-md-6">
+                        <label for="substat" class="form-label">1:</label>
+                        <select class="form-select" aria-label="Default select set">
+                            <option selected>Select</option>
+                            <option *ngFor="let substat of substat">
+                                {{substat.name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="mainstat-value" class="col-form-label">Value:</label>
+                        <input class="active" class="form-control" [(ngModel)]="artifact.mainstat" type="text" name="mainstat">
+                    </div>
                 </div>
 
-                <button id="btn-save" type="submit" [routerLink]="['/artifacts-set', chara.name]" class="btn btn-primary">Save</button>
+                <div class="col">
+                    <button id="btn-save" type="submit" [routerLink]="['/artifacts-set',  chara.id, chara.name]" class="btn btn-primary">Save</button>
+                </div>
             </form>
         </div>
     </div>

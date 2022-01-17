@@ -4,7 +4,7 @@ import { ShowcaseComponent } from './showcase.component';
 
 const routes: Routes = [
   {
-    path: ':name/:id',
+    path: ':id/:name/:id',
     component: ShowcaseComponent,
   },
 ];

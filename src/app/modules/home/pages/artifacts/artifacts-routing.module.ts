@@ -8,8 +8,8 @@ const routes: Routes = [
     path: '', 
     component: ArtifactsComponent,
     children: [
-      { path: ':name/add', component: AddArtifactFormComponent },
-      { path: ':name/:id/edit', component: AddArtifactFormComponent }
+      { path: ':id/:name/add', component: AddArtifactFormComponent },
+      { path: ':id/:name/:id/edit', component: AddArtifactFormComponent }
     ]
   },
 ];

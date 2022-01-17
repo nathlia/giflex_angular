@@ -2,7 +2,7 @@
     <div *ngFor="let artifact of artifacts" class="col-3">
         <div class="type">{{ artifact.type }} &nbsp;</div>
         <div class="card">
-            <div class="artifact-box" [routerLink]="['/artifact', chara.name , artifact.id , 'edit']">
+            <div class="artifact-box" [routerLink]="['/artifact', chara.id, chara.name , artifact.id , 'edit']">
                 <div class="null" *ngIf="artifact.id == null">
                     <div [routerLink]="['/artifact', 'add']"></div>
                 </div>

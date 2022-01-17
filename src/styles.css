@@ -91,6 +91,57 @@ a {
     background-color: #232231;
 }
 
+input {
+    font-family: inherit;
+    font-size: inherit;
+    border-radius: 10px;
+}
+
+input:focus {
+    background-color: #27263A;
+    color: rgba(255, 255, 255, 0.57);
+}
+
+.form-select {
+    background: #27263A;
+    padding: 10px;
+    margin: 10px;
+    color: rgba(255, 255, 255, 0.57);
+    border: 0;
+    border-radius: 6px;
+}
+
+select:focus {
+    box-shadow: 0 0 0 2px #7700ff;
+}
+
+input[type=text] {
+    background-color: #27263A;
+    color: rgba(255, 255, 255, 0.57);
+    border: 0;
+    border-radius: 6px;
+}
+
+input[type=text]:active {
+    background-color: #27263A;
+    color: rgba(255, 255, 255, 0.57);
+    border: 0;
+}
+
+input[type=text]:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #7700ff;
+    background-color: #27263A;
+    color: rgba(255, 255, 255, 0.57);
+}
+
+input[type=number]:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #7700ff;
+    background-color: #27263A;
+    color: rgba(255, 255, 255, 0.57);
+}
+
 
 /* custom primary buttons */
 
