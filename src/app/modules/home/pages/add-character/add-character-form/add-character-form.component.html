@@ -1,31 +1,31 @@
 <div class="container">
     <div class="row">
         <div class="col-mb-2">
-            <app-character-card [chara]="chara"></app-character-card>
+            <app-character-card [chara]="character"></app-character-card>
             <div class="col">
-                <button type="button" class="btn btn-primary" [routerLink]="['/artifacts-set', chara.id, chara.name]">Back</button>
+                <button type="button" class="btn btn-primary" [routerLink]="['/artifacts-set', character.id, character.name]">Back</button>
             </div>
         </div>
         <div class="col-mb-4">
-            <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <form #f="ngForm" (ngSubmit)="editCharacter()">
                 <div class="mb-3">
-                    <label for="disabledTextInput" class="form-label">Nome</label>
-                    <input class="form-control" disabled [(ngModel)]="chara.name" id="disabled" type="text" name="name">
+                    <label for="name" class="form-label">Name</label>
+                    <input class="form-control" disabled [(ngModel)]="character.name" id="disabled" type="text" name="name">
                 </div>
                 <div class="mb-3">
-                    <label for="nome" class="form-label">Level</label>
-                    <input class="active" class="form-control" [(ngModel)]="chara.level" type="text" name="level" maxlength="2">
+                    <label for="level" class="form-label">Level</label>
+                    <input class="active" class="form-control" [(ngModel)]="character.level" type="text" name="level" maxlength="2">
                 </div>
                 <div class="mb-3">
-                    <label for="nome" class="form-label">Crit Rate</label>
-                    <input class="active" class="form-control" [(ngModel)]="chara.critRate" type="text" name="critRate" maxlength="6">
+                    <label for="critRate" class="form-label">Crit Rate</label>
+                    <input class="active" class="form-control" [(ngModel)]="character.critRate" type="text" name="critRate" maxlength="6">
                 </div>
                 <div class="mb-3">
-                    <label or="exampleInputEmail1" class="form-label">Crit Dmg</label>
-                    <input class="active" class="form-control" [(ngModel)]="chara.critDmg" type="text" name="critDmg" maxlength="6">
+                    <label for="critDmg" class="form-label">Crit Dmg</label>
+                    <input class="active" class="form-control" [(ngModel)]="character.critDmg" type="text" name="critDmg" maxlength="6">
                 </div>
 
-                <button id="btn-save" type="submit" [routerLink]="['/artifacts-set', chara.id, chara.name]" class="btn btn-primary">Save</button>
+                <button id="btn-save" type="submit" [routerLink]="['/artifacts-set', character.id, character.name]" class="btn btn-primary">Save</button>
             </form>
         </div>
     </div>

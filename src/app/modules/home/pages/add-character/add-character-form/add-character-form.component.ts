@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Character } from '../../../models/character.model';
 import { CharactersService } from '../../../services/characters.service';
@@ -12,36 +12,35 @@ import { CharactersService } from '../../../services/characters.service';
 export class AddCharacterFormComponent implements OnInit {
 
   character: Character = {
-    name: '',
     level: '',
     critRate: '',
     critDmg: ''
   };
-
-  submitted = false;
-  
-  chara: any;
-  sub: Subscription = new Subscription;
 
   constructor(
     private characterService: CharactersService,
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.sub = this.route.params.subscribe(
-      (paramns: any) => {
-        let name = paramns['name'];
-        this.chara = this.characterService.getCharaByName(name);
-      }
-    );
+    this.getCharacter(this.route.snapshot.params["id"]);
   }  
-   
-  ngOnDestroy() {
-    this.sub.unsubscribe();
+
+  getCharacter(id: string) {
+    this.characterService.get(id).subscribe({
+      next: (data) => {
+        this.character = data;
+        console.log(data);
+      },
+      error: (e) => console.error(e)
+    });    
   }
 
-  onSubmit(form: any){
-    console.log(form);
-    console.log(this.chara);
-  }
+  editCharacter(): void {   
+    this.characterService.update(this.character.id, this.character).subscribe({
+      next: (res) => {
+        console.log(res);        
+      },
+      error: (e) => console.error(e)
+    });
+  } 
 }
