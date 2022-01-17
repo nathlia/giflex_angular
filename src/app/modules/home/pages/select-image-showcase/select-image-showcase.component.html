@@ -4,9 +4,9 @@
     <div class="row row-cols-2">
         <div *ngFor="let image of images">
             <div class="col" id="image">
-                <app-image-card [routerLink]="['/showcase',  chara.id, chara.name, image.id]" [chara]="chara" [image]="image"></app-image-card>
+                <app-image-card [routerLink]="['/showcase',  character.id, character.name, image.id]" [chara]="character" [image]="image"></app-image-card>
             </div>
         </div>
     </div>
-    <a class="btn btn-primary" [routerLink]="['/artifacts-set',  chara.id, chara.name]">Back</a>
+    <a class="btn btn-primary" [routerLink]="['/artifacts-set',  character.id, character.name]">Back</a>
 </div>

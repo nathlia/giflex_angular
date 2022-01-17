@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { Character } from '../../models/character.model';
 import { CharactersService } from '../../services/characters.service';
 import { SelectImageService } from '../../services/select-image.service';
 
@@ -13,29 +14,33 @@ export class SelectImageShowcaseComponent implements OnInit {
 
   images: any [] = [];
 
-  chara: any;
-  sub: Subscription = new Subscription;
+  character: Character = {
+    level: '',
+    critRate: '',
+    critDmg: ''
+  };
+
   selectImageService: any;
 
   constructor(
-    private charactersService: CharactersService,
+    private characterService: CharactersService,
     selectImageService: SelectImageService,
     private route: ActivatedRoute) { 
       this.selectImageService = selectImageService;
     }
 
   ngOnInit(): void {
-    this.sub = this.route.params.subscribe(
-      (paramns: any) => {
-        let name = paramns['name'];
-        this.chara = this.charactersService.getCharaByName(name);        
-      }
-    );
-
+   this.getCharacterById(this.route.snapshot.params["id"]);
    this.images = this.selectImageService.getImage();
-  }  
-   
-  ngOnDestroy() {
-    this.sub.unsubscribe();
+  }    
+
+  getCharacterById(id: string) {
+    this.characterService.get(id).subscribe({
+      next: (data) => {
+        this.character = data;
+        console.log(data);
+      },
+      error: (e) => console.error(e)
+    });    
   }
 }

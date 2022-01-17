@@ -1,18 +1,18 @@
 <div class="container">
     <div class="image">
-        <img src="../../../../../../assets/img/showcase/{{ chara.name }}/{{ image.id }}.jpg">
+        <img src="../../../../../../assets/img/showcase/{{character.name}}/{{image.id}}.jpg">
     </div>
     <section class="showcase-data">
         <div class="character-status">
             <ul class="list-group">
                 <li class="list-group-item" id="rate">
                     <div class="rate">
-                        <p>CRIT Rate: {{ chara.critRate }}</p>
+                        <p>CRIT Rate: {{ character.critRate }}</p>
                     </div>
                 </li>
                 <li class="list-group-item" id="dmg">
                     <div class="damage">
-                        <p>CRIT DMG: {{ chara.critDmg }}</p>
+                        <p>CRIT DMG: {{ character.critDmg }}</p>
                     </div>
                 </li>
             </ul>
@@ -25,5 +25,5 @@
             </section>
         </div>
     </section>
-    <a class="btn btn-primary" [routerLink]="['/select-image', chara.id, chara.name]">Back</a>
+    <a class="btn btn-primary" [routerLink]="['/select-image', character.id, character.name]">Back</a>
 </div>

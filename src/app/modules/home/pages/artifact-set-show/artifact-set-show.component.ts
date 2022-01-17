@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
 import { Character } from 'src/app/modules/home/models/character.model';
 import { ArtifactsService } from '../../services/artifacts.service';
 import { CharactersService } from '../../services/characters.service';

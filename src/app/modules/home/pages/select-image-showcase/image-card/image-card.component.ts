@@ -7,12 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ImageCardComponent implements OnInit {
 
-  @Input('chara') chara: any;
+  @Input('chara') character: any;
   @Input('image') image: any;
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }
