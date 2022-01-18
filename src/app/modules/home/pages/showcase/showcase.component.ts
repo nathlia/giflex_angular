@@ -1,10 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import html2canvas from 'html2canvas';
 import { Subscription } from 'rxjs';
 import { Character } from '../../models/character.model';
 import { ArtifactsService } from '../../services/artifacts.service';
 import { CharactersService } from '../../services/characters.service';
 import { SelectImageService } from '../../services/select-image.service';
+
 
 @Component({
   selector: 'app-showcase',
@@ -12,6 +14,13 @@ import { SelectImageService } from '../../services/select-image.service';
   styleUrls: ['./showcase.component.css']
 })
 export class ShowcaseComponent implements OnInit {  
+
+  @ViewChild('screen')
+  screen!: ElementRef;
+  @ViewChild('canvas')
+  canvas!: ElementRef;
+  @ViewChild('downloadLink')
+  downloadLink!: ElementRef;
 
   character: Character = {
     level: '',
@@ -56,6 +65,15 @@ export class ShowcaseComponent implements OnInit {
    
   ngOnDestroy() {
     this.sub.unsubscribe();
+  }
+
+  downloadImage(){
+    html2canvas(this.screen.nativeElement).then(canvas => {
+      this.canvas.nativeElement.src = canvas.toDataURL();
+      this.downloadLink.nativeElement.href = canvas.toDataURL('image/png');
+      this.downloadLink.nativeElement.download = 'genshin_showcase.png';
+      this.downloadLink.nativeElement.click();
+    });
   }
 
   
