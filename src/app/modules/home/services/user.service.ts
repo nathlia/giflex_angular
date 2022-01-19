@@ -21,11 +21,11 @@ export class UserService {
   }
 
   create(data: any): Observable<any> {
-    return this.http.post(`${baseUrl}/add`, data);
+    return this.http.post(`${baseUrl}`, data);
   }
 
   update(id: any, data: any): Observable<any> {
-    return this.http.put(`${baseUrl}/${id}/edit`, data);
+    return this.http.put(`${baseUrl}/${id}`, data);
   }
 
   findByName(name: any): Observable<User[]> {

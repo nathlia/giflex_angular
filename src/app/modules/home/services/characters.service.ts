@@ -25,13 +25,14 @@ export class CharactersService {
   }
 
   update(id: any, data: any): Observable<any> {
-    return this.http.put(`${baseUrl}/${id}/edit`, data);
+    return this.http.put(`${baseUrl}/${id}`, data);
   }
 
   findByName(name: any): Observable<Character[]> {
     return this.http.get<Character[]>(`${baseUrl}?name=${name}`);
   }
 
+  // ! old 
   characters: any = [
     {
       id: 1,
