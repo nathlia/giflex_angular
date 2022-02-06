@@ -4,21 +4,25 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
      NavbarComponent,
      LoginComponent,
      RegisterComponent
+     
     ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
 
     AppRoutingModule
   ],
   exports: [
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ]
 })
 export class CoreModule {
