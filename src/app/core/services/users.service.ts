@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { User } from '../models/user.model';
+import { Player } from '../models/player.model';
 
 const baseUrl = "http://localhost:8080/users"
 
@@ -12,11 +12,11 @@ export class UsersService {
 
   constructor(private http: HttpClient) {}
 
-  getAll(): Observable<User[]> {
-    return this.http.get<User[]>(baseUrl);
+  getAll(): Observable<Player[]> {
+    return this.http.get<Player[]>(baseUrl);
   }
 
-  get(id: any): Observable<User> {
+  get(id: any): Observable<Player> {
     return this.http.get(`${baseUrl}/${id}`);
   }
 

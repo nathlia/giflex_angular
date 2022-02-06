@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from '../../models/user.model';
+import { Player } from '../../models/player.model';
 import { LoginService } from '../../services/login.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { LoginService } from '../../services/login.service';
 })
 export class NavbarComponent implements OnInit {
 
-  user: User = new User();
+  player: Player = new Player();
   url: string = '';
 
   constructor(
@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit {
     private router: Router
     ) { 
       this.url = router.url;
-      this.user = this.loginService.getLoggedUser();
+      this.player = this.loginService.getLoggedUser();
     }
 
   ngOnInit(): void {

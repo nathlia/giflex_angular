@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from '../../models/user.model';
+import { Player } from '../../models/player.model';
 import { LoginService } from '../../services/login.service';
 @Component({
   selector: 'app-login',
@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
       let username = this.formLogin.value.username;
       let password = this.formLogin.value.password;
 
-      this.loginService.login(new User(username, '', password, '')).subscribe(
+      this.loginService.login(new Player(username, '', password, '')).subscribe(
         next => {
           this.loginService.setLoggedUser(next)
           this.router.navigate(['/characters'])
