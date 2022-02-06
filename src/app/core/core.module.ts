@@ -2,10 +2,12 @@ import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
-     NavbarComponent
+     NavbarComponent,
+     LoginComponent
     ],
   imports: [
     CommonModule,
@@ -13,7 +15,8 @@ import { AppRoutingModule } from '../app-routing.module';
     AppRoutingModule
   ],
   exports: [
-    NavbarComponent
+    NavbarComponent,
+    LoginComponent
   ]
 })
 export class CoreModule {

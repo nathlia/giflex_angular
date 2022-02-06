@@ -91,6 +91,11 @@ a {
     background-color: #232231;
 }
 
+.form-control:active,
+.form-control[readonly] {
+    background-color: #232231;
+}
+
 input {
     font-family: inherit;
     font-size: inherit;
@@ -115,31 +120,55 @@ select:focus {
     box-shadow: 0 0 0 2px #7700ff;
 }
 
-input[type=text] {
+input[type=text],
+input[type=number],
+input[type=password] {
     background-color: #27263A;
     color: rgba(255, 255, 255, 0.57);
     border: 0;
     border-radius: 6px;
 }
 
-input[type=text]:active {
+input[type=text]:active,
+input[type=number]:active,
+input[type=password]:active {
     background-color: #27263A;
     color: rgba(255, 255, 255, 0.57);
     border: 0;
 }
 
-input[type=text]:focus {
+input[type=text]:focus,
+input[type=number]:focus,
+input[type=password]:focus {
     outline: none;
     box-shadow: 0 0 0 2px #7700ff;
     background-color: #27263A;
     color: rgba(255, 255, 255, 0.57);
 }
 
-input[type=number]:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px #7700ff;
-    background-color: #27263A;
-    color: rgba(255, 255, 255, 0.57);
+input:-internal-autofill-selected {
+    appearance: menulist-button;
+    background-image: none !important;
+    background-color: -internal-light-dark(rgba(255, 255, 255, 0.57), #7700ff) !important;
+    color: -internal-light-dark(rgba(255, 255, 255, 0.57), #27263A) !important;
+}
+
+
+/* Change Autocomplete styles in Chrome*/
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    border: 1px solid #7700ff;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.57);
+    -webkit-box-shadow: 0 0 0px 1000px #27263A inset;
+    transition: background-color 5000s ease-in-out 0s;
 }
 
 
