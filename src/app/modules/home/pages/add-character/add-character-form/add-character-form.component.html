@@ -3,7 +3,7 @@
         <div class="col-mb-2">
             <app-character-card [chara]="character"></app-character-card>
             <div class="col">
-                <button type="button" class="btn btn-primary" [routerLink]="['/artifacts-set', character.id, character.name]">Back</button>
+                <button type="button" class="btn btn-primary" [routerLink]="['/artifact-set', character.id, character.name]">Back</button>
             </div>
         </div>
         <div class="col-mb-4">
@@ -24,7 +24,7 @@
                     <label for="critDmg" class="form-label">Crit Dmg</label>
                     <input class="active" class="form-control" [(ngModel)]="character.critDmg" type="number" name="critDmg" maxlength="6">
                 </div>
-                <button id="btn-save" type="submit" [routerLink]="['/artifacts-set', character.id, character.name]" class="btn btn-primary" (click)="editCharacter()">Save</button>
+                <button id="btn-save" type="submit" [routerLink]="['/artifact-set', character.id, character.name]" class="btn btn-primary" (click)="editCharacter()">Save</button>
             </form>
         </div>
     </div>

@@ -6,7 +6,7 @@ import { ArtifactSetShowComponent } from './artifact-set-show.component';
 
 const routes: Routes = [
   {
-    path: 'artifacts-set/:id/:name', component: ArtifactSetShowComponent,
+    path: 'artifact-set/:id/:name', component: ArtifactSetShowComponent,
     // children: [
     //   { path: '/artifact/:id/edit', component: ArtifactsComponent },s
     //   { path: '/artifact/add', component: ArtifactsComponent },

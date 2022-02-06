@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ArtifactType } from '../models/artifact-type.model';
 
-const baseUrl = 'http://localhost:8080/artifact-type';
+const baseUrl = 'http://localhost:8080/artifact-types';
 
 @Injectable({
   providedIn: 'root'

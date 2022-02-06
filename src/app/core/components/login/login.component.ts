@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
 
       this.loginService.login(new User(username, '', password, '')).subscribe(
         next => {
+          this.loginService.setLoggedUser(next)
           this.router.navigate(['/characters'])
         })     
     } 
