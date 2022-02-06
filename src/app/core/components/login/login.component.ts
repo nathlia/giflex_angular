@@ -33,8 +33,7 @@ export class LoginComponent implements OnInit {
       this.loginService.login(new User(username, '', password, '')).subscribe(
         next => {
           this.router.navigate(['/characters'])
-        }
-      )     
+        })     
     } 
     else {
       alert('Wrong Username or Password!')

@@ -7,6 +7,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { RouterModule } from '@angular/router';
 import { CharactersService } from './services/characters.service';
 import { SelectImageService } from './services/select-image.service';
+import { CoreModule } from 'src/app/core/core.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SelectImageService } from './services/select-image.service';
     RouterModule,
     HomeRoutingModule, 
     CommonModule,
-    SharedModule
+    SharedModule,  
+    CoreModule  
   ],
   exports: [
   ],
