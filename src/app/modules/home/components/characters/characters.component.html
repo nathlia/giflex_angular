@@ -4,7 +4,7 @@
 <section class="row">
     <div *ngFor="let chara of characters">
         <div class="col-" id="character-card">
-            <app-character-card [routerLink]="['/artifact-set', chara.id, chara.name]" [chara]="chara"></app-character-card>
+            <app-character-card [routerLink]="['artifact-set', chara.id, chara.name]" [chara]="chara"></app-character-card>
         </div>
     </div>
 </section>

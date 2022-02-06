@@ -4,7 +4,7 @@
             <app-character-card [routerLink]="['/add-character',  character.id, character.name ,'edit']" [chara]="character">
             </app-character-card>
             <div class="col">
-                <button class="btn btn-primary" type="button" [routerLink]="['/artifact-set',  character.id, character.name]">Back</button>
+                <button class="btn btn-primary" type="button" [routerLink]="['/characters/artifact-set',  character.id, character.name]">Back</button>
             </div>
         </div>
         <div class="col-10">
@@ -61,7 +61,7 @@
                 </div>
 
                 <div class="col">
-                    <button id="btn-save" type="submit" [routerLink]="['/artifact-set',  character.id, character.name]" class="btn btn-primary">Save</button>
+                    <button id="btn-save" type="submit" [routerLink]="['/characters/artifact-set',  character.id, character.name]" class="btn btn-primary">Save</button>
                 </div>
             </form>
         </div>
