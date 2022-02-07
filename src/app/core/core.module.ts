@@ -5,6 +5,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthGuardService } from './services/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
 
     AppRoutingModule
+  ],
+  providers: [
+    AuthGuardService
   ],
   exports: [
     NavbarComponent,

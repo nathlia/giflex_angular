@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { CharactersService } from './services/characters.service';
 import { SelectImageService } from './services/select-image.service';
 import { CoreModule } from 'src/app/core/core.module';
+import { AuthGuardService } from 'src/app/core/services/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,10 @@ import { CoreModule } from 'src/app/core/core.module';
   ],
   exports: [
   ],
-  providers: [CharactersService, SelectImageService]
+  providers: [
+    CharactersService,
+    SelectImageService,
+    AuthGuardService
+  ]
 })
 export class HomeModule { }
