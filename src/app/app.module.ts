@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -15,7 +15,10 @@ import { CharactersService } from './modules/home/services/characters.service';
 import { SelectImageService } from './modules/home/services/select-image.service';
 import { ArtifactsService } from './modules/home/services/artifacts.service';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthGuardService } from './core/services/auth-guard.service';
+import { ErrorhandlerService } from './core/services/errorhandler.service';
+import { JwtinterceptorService } from './core/services/jwtinterceptor.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,14 @@ import { HttpClientModule } from '@angular/common/http';
     HomeRoutingModule,
     
   ],
-  providers: [CharactersService, SelectImageService, ArtifactsService],
+  providers: [
+    CharactersService, 
+    SelectImageService, 
+    ArtifactsService,
+    AuthGuardService,
+    {provide: ErrorHandler, useClass: ErrorhandlerService},
+    {provide: HTTP_INTERCEPTORS, useClass: JwtinterceptorService, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
