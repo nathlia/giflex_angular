@@ -1,10 +1,19 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+
+const baseUrl = 'http://localhost:8080/artifacts';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArtifactsService {
 
+  constructor(private http: HttpClient) {}
+
+  // getAll(): Observable<Artifact[]> {
+
+  // }
   
 
   artifacts: any = [
@@ -48,5 +57,5 @@ export class ArtifactsService {
     return null;
   }
 
-  constructor() { }
+  // constructor() { }
 }
