@@ -26,11 +26,24 @@ export class AddArtifactFormComponent implements OnInit {
     name: '',
     level: '',
     critRate: '',
-    critDmg: ''
+    critDmg: '',
+    equippedArtifacts: [] 
   };
 
+    // artifact: Artifact = {
+  //   artifactType: '',
+  //   artifactSetType: '',
+  //   mainstat: '',
+  //   mainStatValue: '',
+  //   artifactSubstats: []
+  // };
+
+  // substat: Substat = {
+  //   name: ''   
+  // };
+
   //! old
-  artifact: any;
+  //artifact: any;
   subscription: Subscription = new Subscription;
   //! old
 
@@ -48,12 +61,12 @@ export class AddArtifactFormComponent implements OnInit {
     this.getSet();
     this.getSubstat();
 
-    this.subscription = this.route.params.subscribe(
-      (paramns: any) => {
-        let id = paramns['artId'];
-        this.artifact = this.artifactsService.getArtifactById(id);
-      }
-    );
+    // this.subscription = this.route.params.subscribe(
+    //   (paramns: any) => {
+    //     let id = paramns['artId'];
+    //     this.artifact = this.artifactsService.getArtifactById(id);
+    //   }
+    // );
 
     this.getCharacterById(this.route.snapshot.params["charaId"]);
   }  
@@ -98,12 +111,12 @@ export class AddArtifactFormComponent implements OnInit {
     });
   }
    
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
+  // ngOnDestroy() {
+  //   this.subscription.unsubscribe();
+  // }
 
   onSubmit(form: any){
     console.log(form);
-    console.log(this.artifact);
+    console.log(this.character.equippedArtifacts);
   }
 }

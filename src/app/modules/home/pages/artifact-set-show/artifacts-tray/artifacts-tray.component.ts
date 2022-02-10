@@ -29,13 +29,13 @@ export class ArtifactsTrayComponent implements OnInit {
   //   substat: []
   // };
 
-  artifacts ?: Artifact[];
+  // artifacts ?: Artifact[];
 
 
 
-  substat: Substat = {
-    name: ''
-  };
+  // substat: Substat = {
+  //   name: ''
+  // };
   //artifacts: any;
 
   sub: Subscription = new Subscription;
@@ -47,10 +47,7 @@ export class ArtifactsTrayComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
     this.getCharacterById(this.route.snapshot.params["id"]);
-
-
   }
 
   getCharacterById(id: string) {
@@ -61,13 +58,5 @@ export class ArtifactsTrayComponent implements OnInit {
       },
       error: (e) => console.error(e)
     });    
-  }
-
-  getCharacterArtifact(character : Character) {    
-    
-  }
-
-  ngOnDestroy() {
-    this.sub.unsubscribe();
   }
 }
