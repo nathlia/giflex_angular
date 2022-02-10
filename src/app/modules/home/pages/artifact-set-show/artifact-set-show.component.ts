@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Character } from 'src/app/modules/home/models/character.model';
+import { Artifact } from '../../models/artifact.model';
+import { Substat } from '../../models/substat.model';
 import { ArtifactsService } from '../../services/artifacts.service';
 import { CharactersService } from '../../services/characters.service';
 
@@ -14,12 +16,25 @@ export class ArtifactSetShowComponent implements OnInit {
   character: Character = {
     level: '',
     critRate: '',
-    critDmg: ''
+    critDmg: '',
+    equippedArtifacts: []
   };
 
-  @Input('artifact') artifact: any;
+  // artifact: Artifact = {
+  //   artifactType: '',
+  //   artifactSetType: '',
+  //   mainstat: '',
+  //   mainStatValue: '',
+  //   artifactSubstats: []
+  // };
 
-  artifacts: any;
+  // substat: Substat = {
+  //   name: ''   
+  // };
+
+  //@Input('artifact') artifact: any;
+
+  //artifacts: any;
 
   constructor(
     private artifactsService: ArtifactsService,
@@ -30,14 +45,15 @@ export class ArtifactSetShowComponent implements OnInit {
   ngOnInit(): void {
 
     this.getCharacterById(this.route.snapshot.params["id"]);
-
-    this.artifacts = this.artifactsService.getArtifacts();
+    
+    //this.getCharacterArtifact(this.character)
+    //this.artifacts = this.artifactsService.getArtifacts();
   }
 
   getCharacterById(id: string) {
     this.characterService.get(id).subscribe({
       next: (data) => {
-        this.character = data;
+        this.character = data;        
         console.log(data);
       },
       error: (e) => console.error(e)

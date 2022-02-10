@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { Artifact } from '../../../models/artifact.model';
 import { Character } from '../../../models/character.model';
+import { Substat } from '../../../models/substat.model';
 import { ArtifactsService } from '../../../services/artifacts.service';
 import { CharactersService } from '../../../services/characters.service';
 
@@ -15,10 +17,26 @@ export class ArtifactsTrayComponent implements OnInit {
   @Input() character: Character = { 
       level: '',
       critRate: '',
-      critDmg: ''   
+      critDmg: '',
+      equippedArtifacts: []   
   };
 
-  artifacts: any;
+  // artifact: Artifact = {
+  //   artifactType: '',
+  //   artifactSetType: '',
+  //   mainstat: '',
+  //   mainStatValue: '',
+  //   substat: []
+  // };
+
+  artifacts ?: Artifact[];
+
+
+
+  substat: Substat = {
+    name: ''
+  };
+  //artifacts: any;
 
   sub: Subscription = new Subscription;
 
@@ -32,7 +50,7 @@ export class ArtifactsTrayComponent implements OnInit {
 
     this.getCharacterById(this.route.snapshot.params["id"]);
 
-    this.artifacts = this.artifactsService.getArtifacts();
+
   }
 
   getCharacterById(id: string) {
@@ -43,6 +61,10 @@ export class ArtifactsTrayComponent implements OnInit {
       },
       error: (e) => console.error(e)
     });    
+  }
+
+  getCharacterArtifact(character : Character) {    
+    
   }
 
   ngOnDestroy() {

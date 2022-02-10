@@ -6,5 +6,5 @@ export class Artifact {
     artifactSetType?: any;
     mainstat?: any;
     mainStatValue?: any;
-    Substat?: Substat[];
+    artifactSubstats?: Substat[];
 }

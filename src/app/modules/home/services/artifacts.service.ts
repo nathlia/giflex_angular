@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Artifact } from '../models/artifact.model';
 
 const baseUrl = 'http://localhost:8080/artifacts';
 
@@ -11,11 +12,23 @@ export class ArtifactsService {
 
   constructor(private http: HttpClient) {}
 
-  // getAll(): Observable<Artifact[]> {
+  getAll(): Observable<Artifact[]> {
+    return this.http.get<Artifact[]>(baseUrl);
+  }
 
-  // }
+  get(id: any): Observable<Artifact> {
+    return this.http.get(`${baseUrl}/${id}`);
+  }
+
+  create(data: any): Observable<any> {
+    return this.http.post(baseUrl, data);
+  }
+
+  update(id: any, data: any): Observable<any> {
+    return this.http.put(`${baseUrl}/${id}`, data);
+  }  
   
-
+// ! old
   artifacts: any = [
     {
       id: 1,
