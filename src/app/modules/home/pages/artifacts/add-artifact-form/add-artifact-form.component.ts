@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ArtifactSetType } from '../../../models/artifact-set-type.model';
 import { ArtifactType } from '../../../models/artifact-type.model';
+import { Artifact } from '../../../models/artifact.model';
 import { Character } from '../../../models/character.model';
 import { Substat } from '../../../models/substat.model';
 import { ArtifactSetTypeService } from '../../../services/artifact-set-type.service';
@@ -30,17 +31,13 @@ export class AddArtifactFormComponent implements OnInit {
     equippedArtifacts: [] 
   };
 
-    // artifact: Artifact = {
-  //   artifactType: '',
-  //   artifactSetType: '',
-  //   mainstat: '',
-  //   mainStatValue: '',
-  //   artifactSubstats: []
-  // };
-
-  // substat: Substat = {
-  //   name: ''   
-  // };
+    artifact: Artifact = {
+    artifactType: '',
+    artifactSetType: '',
+    mainstat: '',
+    mainStatValue: '',
+    artifactSubstats: []
+  };  
 
   //! old
   //artifact: any;
@@ -60,13 +57,6 @@ export class AddArtifactFormComponent implements OnInit {
     this.getType();
     this.getSet();
     this.getSubstat();
-
-    // this.subscription = this.route.params.subscribe(
-    //   (paramns: any) => {
-    //     let id = paramns['artId'];
-    //     this.artifact = this.artifactsService.getArtifactById(id);
-    //   }
-    // );
 
     this.getCharacterById(this.route.snapshot.params["charaId"]);
   }  
@@ -110,13 +100,9 @@ export class AddArtifactFormComponent implements OnInit {
       error: (e) => console.error(e)
     });
   }
-   
-  // ngOnDestroy() {
-  //   this.subscription.unsubscribe();
-  // }
 
   onSubmit(form: any){
     console.log(form);
-    console.log(this.character.equippedArtifacts);
+    //console.log(this.character.equippedArtifacts);
   }
 }

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { Artifact } from '../../models/artifact.model';
 import { Character } from '../../models/character.model';
+import { Substat } from '../../models/substat.model';
 import { ArtifactsService } from '../../services/artifacts.service';
 import { CharactersService } from '../../services/characters.service';
 
@@ -12,12 +14,12 @@ import { CharactersService } from '../../services/characters.service';
 })
 export class ArtifactsComponent implements OnInit {
 
-  character: Character = {
-    level: '',
-    critRate: '',
-    critDmg: '',
-    equippedArtifacts: []
-  };
+  // character: Character = {
+  //   level: '',
+  //   critRate: '',
+  //   critDmg: '',
+  //   equippedArtifacts: []
+  // };
 
   // artifact: Artifact = {
   //   artifactType: '',
@@ -43,20 +45,20 @@ export class ArtifactsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.getCharacterById(this.route.snapshot.params["id"]);
+    //this.getCharacterById(this.route.snapshot.params["id"]);
     
     //this.getCharacterArtifact(this.character)
     //this.artifacts = this.artifactsService.getArtifacts();
   }
 
-  getCharacterById(id: string) {
-    this.characterService.get(id).subscribe({
-      next: (data) => {
-        this.character = data;        
-        console.log(data);
-      },
-      error: (e) => console.error(e)
-    });    
-  }
+  // getCharacterById(id: string) {
+  //   this.characterService.get(id).subscribe({
+  //     next: (data) => {
+  //       this.character = data;        
+  //       console.log(data);
+  //     },
+  //     error: (e) => console.error(e)
+  //   });    
+  // }
 
 }
