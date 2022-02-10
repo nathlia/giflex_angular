@@ -20,8 +20,8 @@ export class ArtifactsService {
     return this.http.get(`${baseUrl}/${id}`);
   }
 
-  create(data: any): Observable<any> {
-    return this.http.post(baseUrl, data);
+  create(data: any, charaId: any): Observable<any> {
+    return this.http.post(`${baseUrl}/${charaId}`, data);
   }
 
   update(id: any, data: any): Observable<any> {
