@@ -19,6 +19,8 @@ import { SubstatService } from '../../../services/substat.service';
 })
 export class AddArtifactFormComponent implements OnInit { 
 
+  charaId = '';
+
   type?: ArtifactType[];
   set?: ArtifactSetType[];
   substat?: Substat[];
@@ -30,7 +32,6 @@ export class AddArtifactFormComponent implements OnInit {
     critDmg: '',
     equippedArtifacts: [] 
   };
-
     artifact: Artifact = {
     artifactType: '',
     artifactSetType: '',
@@ -59,7 +60,14 @@ export class AddArtifactFormComponent implements OnInit {
     this.getSubstat();
 
     this.getCharacterById(this.route.snapshot.params["charaId"]);
+
+    this.charaId = this.route.snapshot.params["charaId"];
   }  
+
+  // onSelectSet(id: void) {
+  //   this.artifact.artifactSetType = this.set;
+  //   console.log(id);
+  // }
 
   getCharacterById(id: string) {
     this.characterService.get(id).subscribe({
@@ -101,8 +109,27 @@ export class AddArtifactFormComponent implements OnInit {
     });
   }
 
-  onSubmit(form: any){
-    console.log(form);
+  addArtifact(): void {
+    console.log("Submited artifact:");
+    console.log(this.artifact);
+
+    const data = {
+      artifactType: this.artifact.artifactType,
+      artifactSetType: this.artifact.artifactSetType,
+      mainstat: this.artifact.mainstat,
+      mainStatValue: this.artifact.mainStatValue
+      // artifactSubstats: 
+    };
+    charaId: this.charaId;
+
+    this.artifactsService.create(data, this.charaId)
+      .subscribe({
+        next: (res) => {
+          console.log(res);
+        },
+        error: (e) => console.error(e)
+      });
+
     //console.log(this.character.equippedArtifacts);
   }
 }
