@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ArtifactSetType } from '../../../models/artifact-set-type.model';
 import { ArtifactType } from '../../../models/artifact-type.model';
@@ -15,10 +15,9 @@ import { SubstatService } from '../../../services/substat.service';
 @Component({
   selector: 'app-add-artifact-form',
   templateUrl: './add-artifact-form.component.html',
-  styleUrls: ['./add-artifact-form.component.css']
+  styleUrls: ['./add-artifact-form.component.css'],
 })
-export class AddArtifactFormComponent implements OnInit { 
-
+export class AddArtifactFormComponent implements OnInit {
   charaId = '';
 
   type?: ArtifactType[];
@@ -30,20 +29,15 @@ export class AddArtifactFormComponent implements OnInit {
     level: '',
     critRate: '',
     critDmg: '',
-    equippedArtifacts: [] 
+    equippedArtifacts: [],
   };
-    artifact: Artifact = {
+  artifact: Artifact = {
     artifactType: '',
     artifactSetType: '',
     mainstat: '',
     mainStatValue: '',
-    artifactSubstats: []
-  };  
-
-  //! old
-  //artifact: any;
-  subscription: Subscription = new Subscription;
-  //! old
+    artifactSubstats: [],
+  };
 
   constructor(
     private artifactTypeService: ArtifactTypeService,
@@ -51,23 +45,23 @@ export class AddArtifactFormComponent implements OnInit {
     private substatService: SubstatService,
     private artifactsService: ArtifactsService,
     private characterService: CharactersService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
-  ngOnInit(): void {   
+  ngOnInit(): void {
+
+    if (this.router.url.indexOf('edit') > -1) {
+      console.log('Inside Edit')
+      this.getArtifactById(this.route.snapshot.params['artId']);
+    }       
 
     this.getType();
     this.getSet();
     this.getSubstat();
-
-    this.getCharacterById(this.route.snapshot.params["charaId"]);
-
-    this.charaId = this.route.snapshot.params["charaId"];
-  }  
-
-  // onSelectSet(id: void) {
-  //   this.artifact.artifactSetType = this.set;
-  //   console.log(id);
-  // }
+    this.getCharacterById(this.route.snapshot.params['charaId']);
+    this.charaId = this.route.snapshot.params['charaId'];    
+  }
 
   getCharacterById(id: string) {
     this.characterService.get(id).subscribe({
@@ -75,8 +69,18 @@ export class AddArtifactFormComponent implements OnInit {
         this.character = data;
         console.log(data);
       },
+      error: (e) => console.error(e),
+    });
+  }
+
+  getArtifactById(id: string) {
+    this.artifactsService.get(id).subscribe({
+      next: (data) => {
+        this.artifact = data;
+        console.log(data);
+      },
       error: (e) => console.error(e)
-    });    
+    });
   }
 
   getType() {
@@ -85,7 +89,7 @@ export class AddArtifactFormComponent implements OnInit {
         this.type = data;
         console.log(data);
       },
-      error: (e) => console.error(e)
+      error: (e) => console.error(e),
     });
   }
 
@@ -95,7 +99,7 @@ export class AddArtifactFormComponent implements OnInit {
         this.set = data;
         console.log(data);
       },
-      error: (e) => console.error(e)
+      error: (e) => console.error(e),
     });
   }
 
@@ -105,31 +109,30 @@ export class AddArtifactFormComponent implements OnInit {
         this.substat = data;
         console.log(data);
       },
-      error: (e) => console.error(e)
+      error: (e) => console.error(e),
     });
   }
 
   addArtifact(): void {
-    console.log("Submited artifact:");
+    console.log('Submited artifact:');
     console.log(this.artifact);
 
     const data = {
       artifactType: this.artifact.artifactType,
       artifactSetType: this.artifact.artifactSetType,
       mainstat: this.artifact.mainstat,
-      mainStatValue: this.artifact.mainStatValue
-      // artifactSubstats: 
+      mainStatValue: this.artifact.mainStatValue,
+      // artifactSubstats:
     };
     charaId: this.charaId;
 
-    this.artifactsService.create(data, this.charaId)
-      .subscribe({
-        next: (res) => {
-          console.log(res);
-        },
-        error: (e) => console.error(e)
-      });
-
-    //console.log(this.character.equippedArtifacts);
+    this.artifactsService.create(data, this.charaId).subscribe({
+      next: (res) => {
+        console.log(res);
+      },
+      error: (e) => console.error(e),
+    });
   }
 }
+
+

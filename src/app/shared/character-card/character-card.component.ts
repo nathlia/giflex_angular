@@ -14,8 +14,4 @@ export class CharacterCardComponent implements OnInit {
 
   ngOnInit(): void {    
   }
-
-  // getImage() {
-  //   return "./assets/img/character/"+this.chara.name+".png";
-  // }
 }

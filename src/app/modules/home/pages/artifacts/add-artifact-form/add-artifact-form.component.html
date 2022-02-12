@@ -12,8 +12,7 @@
                 <div class="col-md-6">
                     <div class="col-12">
                         <label for="type" class="col-form-label">Type:</label>
-                        <select class="form-select" aria-label="Default select type" name="type" [(ngModel)]="artifact.artifactType">
-                            <option selected>Select</option>
+                        <select class="form-select" aria-label="Default select type" name="artifactType" [(ngModel)]="artifact.artifactType">                            
                             <option *ngFor="let type of type" [ngValue]="type.id">
                                 {{type.name}}
                             </option>
@@ -21,8 +20,8 @@
                     </div>
                     <div class="col-12">
                         <label for="set" class="col-form-label">Set:</label>
-                        <select class="form-select" aria-label="Default select set" name="set" [(ngModel)]="artifact.artifactSetType">
-                            <option selected>Select</option>
+                        <select class="form-select" aria-label="Default select set" name="artifactSetType" [(ngModel)]="artifact.artifactSetType">
+                            <!-- <option selected>Select</option> -->
                             <option *ngFor="let set of set " [ngValue]="set.id">
                                 {{set.name}}
                             </option>
@@ -30,8 +29,8 @@
                     </div>
                     <div class="col-md-12 ">
                         <label for="substat " class="col-form-label ">Main Stat:</label>
-                        <select class="form-select " aria-label="Default select set " name="mainstat " [(ngModel)]="artifact.mainstat ">
-                            <option selected>Select</option>
+                        <select class="form-select " aria-label="Default select set " name="mainstat" [(ngModel)]="artifact.mainstat">
+                            <!-- <option selected>Select</option> -->
                             <option *ngFor="let substat of substat" [ngValue]="substat.id">
                                 {{substat.name}}
                             </option>
@@ -39,7 +38,7 @@
                     </div>
                     <div class="col-md-6 ">
                         <label for="mainstat-value " class="col-form-label ">Value:</label>
-                        <input class="active " class="form-control " [(ngModel)]="artifact.mainStatValue " type="text " name="mainstat ">
+                        <input class="active " class="form-control " [(ngModel)]="artifact.mainStatValue " type="number" name="mainStatValue">
                     </div>
                 </div>
 
@@ -47,8 +46,8 @@
                     <h3>Substats:</h3>
                     <div class="col-md-6 ">
                         <label for="substat " class="form-label ">1:</label>
-                        <select class="form-select " aria-label="Default select set ">
-                            <option selected>Select</option>
+                        <select class="form-select " aria-label="Default select set">
+                            <!-- <option selected>Select</option> -->
                             <option *ngFor="let substat of substat ">
                                 {{substat.name}}
                             </option>
