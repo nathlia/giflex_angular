@@ -27,6 +27,10 @@ export class ArtifactsService {
   update(id: any, data: any): Observable<any> {
     return this.http.put(`${baseUrl}/${id}`, data);
   }  
+
+  delete(id: any): Observable<any> {
+    return this.http.delete(`${baseUrl}/${id}`);
+  }
   
 // ! old
   artifacts: any = [

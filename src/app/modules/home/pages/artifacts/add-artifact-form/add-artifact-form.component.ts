@@ -19,6 +19,7 @@ import { SubstatService } from '../../../services/substat.service';
 })
 export class AddArtifactFormComponent implements OnInit {
   charaId = '';
+  index = [1, 2, 3, 4];
 
   type?: ArtifactType[];
   set?: ArtifactSetType[];
@@ -50,17 +51,16 @@ export class AddArtifactFormComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-
     if (this.router.url.indexOf('edit') > -1) {
-      console.log('Inside Edit')
+      console.log('Inside Edit');
       this.getArtifactById(this.route.snapshot.params['artId']);
-    }       
+    }
 
     this.getType();
     this.getSet();
     this.getSubstat();
     this.getCharacterById(this.route.snapshot.params['charaId']);
-    this.charaId = this.route.snapshot.params['charaId'];    
+    this.charaId = this.route.snapshot.params['charaId'];
   }
 
   getCharacterById(id: string) {
@@ -79,7 +79,7 @@ export class AddArtifactFormComponent implements OnInit {
         this.artifact = data;
         console.log(data);
       },
-      error: (e) => console.error(e)
+      error: (e) => console.error(e),
     });
   }
 
@@ -133,6 +133,14 @@ export class AddArtifactFormComponent implements OnInit {
       error: (e) => console.error(e),
     });
   }
+
+  deleteArtifact() {
+    console.log('Delete');    
+    this.artifactsService.delete(this.artifact.id).subscribe({
+      next: (res) => {
+        console.log(res);
+      },
+      error: (e) => console.error(e),
+    });
+  }
 }
-
-
