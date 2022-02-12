@@ -20,6 +20,7 @@ import { SubstatService } from '../../../services/substat.service';
 export class AddArtifactFormComponent implements OnInit {
   charaId = '';
   index = [1, 2, 3, 4];
+  isEdit : boolean = false;
 
   type?: ArtifactType[];
   set?: ArtifactSetType[];
@@ -54,6 +55,8 @@ export class AddArtifactFormComponent implements OnInit {
     if (this.router.url.indexOf('edit') > -1) {
       console.log('Inside Edit');
       this.getArtifactById(this.route.snapshot.params['artId']);
+
+      this.isEdit = true;
     }
 
     this.getType();

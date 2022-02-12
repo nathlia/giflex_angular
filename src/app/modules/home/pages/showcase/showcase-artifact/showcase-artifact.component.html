@@ -1,16 +1,16 @@
-<div *ngFor="let artifact of artifacts">
+<div *ngFor="let artifact of character.equippedArtifacts">
     <div class="card">
         <div class="artifact-box">
-            <div class="set-name">{{ artifact.set }}</div>
-            <div class="set-type">{{ artifact.type }}</div>
-            <div class="main-stat">{{ artifact.mainstat }}</div>
+            <div class="set-name">{{ artifact.artifactSetType.name }}</div>
+            <div class="set-type">{{ artifact.artifactType.name }}</div>
+            <div class="main-stat">{{ artifact.mainstat.name }} {{ artifact.mainStatValue }}</div>
 
-            <div class="substats">
+            <!-- <div class="substats">
                 <div class="substat">{{ artifact.substats[0] }}</div>
                 <div class="substat">{{ artifact.substats[1] }}</div>
                 <div class="substat">{{ artifact.substats[2] }}</div>
                 <div class="substat">{{ artifact.substats[3] }}</div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

@@ -2,6 +2,7 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import html2canvas from 'html2canvas';
 import { Subscription } from 'rxjs';
+import { Artifact } from '../../models/artifact.model';
 import { Character } from '../../models/character.model';
 import { ArtifactsService } from '../../services/artifacts.service';
 import { CharactersService } from '../../services/characters.service';
@@ -25,10 +26,11 @@ export class ShowcaseComponent implements OnInit {
   character: Character = {
     level: '',
     critRate: '',
-    critDmg: ''
+    critDmg: '',
+    equippedArtifacts: []
   };
 
-  artifacts: any;
+  //artifacts: any;
   image: any;
   sub: Subscription = new Subscription;
 
@@ -48,10 +50,9 @@ export class ShowcaseComponent implements OnInit {
         let id = paramns['imageId'];
         this.image = this.selectImageservice.getImageById(id);
       }
-    );
-
-    this.artifacts = this.artifactsService.getArtifacts();
+    );    
   }  
+ 
 
   getCharacterById(id: string) {
     this.characterService.get(id).subscribe({
@@ -62,10 +63,6 @@ export class ShowcaseComponent implements OnInit {
       error: (e) => console.error(e)
     });    
   }
-   
-  ngOnDestroy() {
-    this.sub.unsubscribe();
-  }
 
   downloadImage(){
     html2canvas(this.screen.nativeElement).then(canvas => {
@@ -75,6 +72,5 @@ export class ShowcaseComponent implements OnInit {
       this.downloadLink.nativeElement.click();
     });
   }
-
   
 }
