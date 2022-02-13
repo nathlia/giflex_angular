@@ -20,22 +20,6 @@ export class ArtifactSetShowComponent implements OnInit {
     equippedArtifacts: []
   };
 
-  // artifact: Artifact = {
-  //   artifactType: '',
-  //   artifactSetType: '',
-  //   mainstat: '',
-  //   mainStatValue: '',
-  //   artifactSubstats: []
-  // };
-
-  // substat: Substat = {
-  //   name: ''   
-  // };
-
-  //@Input('artifact') artifact: any;
-
-  //artifacts: any;
-
   constructor(
     private artifactsService: ArtifactsService,
     private characterService: CharactersService,
@@ -43,11 +27,7 @@ export class ArtifactSetShowComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-
     this.getCharacterById(this.route.snapshot.params["id"]);
-    
-    //this.getCharacterArtifact(this.character)
-    //this.artifacts = this.artifactsService.getArtifacts();
   }
 
   getCharacterById(id: string) {

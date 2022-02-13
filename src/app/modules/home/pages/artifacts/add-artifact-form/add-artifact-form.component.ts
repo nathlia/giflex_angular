@@ -137,7 +137,16 @@ export class AddArtifactFormComponent implements OnInit {
     });
   }
 
-  deleteArtifact() {
+  editArtifact(): void {
+    this.artifactsService.update(this.artifact.id, this.artifact).subscribe({
+      next: (res) => {
+        console.log(res);
+      },
+      error: (e) => console.log(e)
+    });
+  }
+
+  deleteArtifact(): void {
     console.log('Delete');    
     this.artifactsService.delete(this.artifact.id).subscribe({
       next: (res) => {

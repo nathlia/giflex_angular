@@ -17,15 +17,21 @@
                                 {{type.name}}
                             </option>
                         </select>
+
+                        <p>{{artifact.artifactType.name}}</p>
+
                     </div>
                     <div class="col-12">
                         <label for="set" class="col-form-label">Set:</label>
                         <select class="form-select" aria-label="Default select set" name="artifactSetType" [(ngModel)]="artifact.artifactSetType">
                             <!-- <option selected>Select</option> -->
-                            <option *ngFor="let set of set " [ngValue]="set.id">
+                            <option *ngFor="let set of set" [ngValue]="set.id">
                                 {{set.name}}
                             </option>
                         </select>
+
+                        <p>{{ artifact.artifactSetType.name }}</p>
+
                     </div>
                     <div class="col-md-12 ">
                         <label for="substat " class="col-form-label ">Main Stat:</label>
@@ -35,6 +41,9 @@
                                 {{substat.name}}
                             </option>
                         </select>
+
+                        <p>{{ artifact.mainstat.name }}</p>
+
                     </div>
                     <div class="col-md-6 ">
                         <label for="mainstat-value " class="col-form-label ">Value:</label>
@@ -42,29 +51,57 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 " id="substats">
+                <div class="col-md-6" id="substats">
                     <h3>Substats:</h3>
                     <div class="col-md-6 ">
-                        <div *ngFor="let i of index">
-                            <label for="substat" class="form-label">{{i}}:</label>
-                            <select class="form-select " aria-label="Default select set" name="susbtats" [(ngModel)]="artifact.artifactSubstats">
-                                <!-- <option selected>Select</option> -->
-                                <option *ngFor="let substat of substat">
+                        <div *ngIf="isEdit">
+                            <label for="substat" class="form-label"></label>
+
+                            <ng-container *ngFor="let artifactSubstat of artifact.artifactSubstats">
+
+                                <select class="form-select " aria-label="Default select set" name="susbtats" [(ngModel)]="artifact.artifactSubstats">
+                                    <option *ngFor="let substat of substat" [ngValue]="substat.id">
+                                        {{substat.name}}
+                                    </option>
+                                </select>
+
+                                <p>{{ artifactSubstat.substat!.name }}</p>
+
+                                <div class="col-md-6 ">
+                                    <label for="mainstat-value " class="col-form-label">Value:</label>
+                                    <input class="active " class="form-control " [(ngModel)]="artifactSubstat.substatValue" type="number" name="substat">
+
+                                </div>
+
+                            </ng-container>
+                        </div>
+
+                        <!-- <div *ngFor="let i of index">
+                            <label for="substat " class="col-form-label"></label>
+                            <select class="form-select " aria-label="Default select set" name="substat"
+                                [(ngModel)]="artifact.artifactSubstats">                               
+                                <option *ngFor="let substat of substat" [ngValue]="substat.id">
                                     {{substat.name}}
                                 </option>
                             </select>
+
                             <div class="col-md-6 ">
                                 <label for="mainstat-value " class="col-form-label ">Value:</label>
-                                <input class="active " class="form-control " [(ngModel)]="artifact.artifactSubstats " type="number" name="substat">
+                                <input class="active " class="form-control "
+                                    [(ngModel)]="artifact.artifactSubstats.substatValue " type="number"
+                                    name="mainStatValue">
                             </div>
-                        </div>
+
+                        </div> -->
+
                     </div>
                 </div>
                 <div class="col">
                     <button class="btn btn-primary" type="button" *ngIf="isEdit" (click)="deleteArtifact()" [routerLink]="['/characters/artifact-set',  character.id, character.name]">Delete</button>
                 </div>
                 <div class="col ">
-                    <button id="btn-save " type="submit " [routerLink]="[ '/characters/artifact-set', character.id, character.name] " class="btn btn-primary " (click)="addArtifact() ">Save</button>
+                    <button *ngIf="isEdit === false" id="btn-save " type="submit " [routerLink]="[ '/characters/artifact-set', character.id, character.name] " class="btn btn-primary " (click)="addArtifact() ">Save</button>
+                    <button *ngIf="isEdit" id="btn-save " type="submit " [routerLink]="[ '/characters/artifact-set', character.id, character.name] " class="btn btn-primary " (click)="editArtifact()">Edit</button>
                 </div>
             </form>
         </div>
