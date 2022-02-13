@@ -3,15 +3,14 @@
         <div class="type">{{ artifact.artifactType.name }} &nbsp;</div>
         <div class="card" [routerLink]="['/artifact', character.id, character.name, artifact.id, 'edit']">
             <div class="artifact-box">
-
                 <div class="set">{{ artifact.artifactSetType.name }}</div>
+                <div class="mainstat">{{ artifact.mainstat.name }} {{ artifact.mainStatValue }}</div>
 
-                <div class="mainstat">{{ artifact.mainstat.name }}</div>
-                <div class="mainstatValue">{{ artifact.mainStatValue }}</div>
-
-                <!-- <div *ngFor="let substat of artifact.artifactSubstats" class="substats">
-                    <div class="substat">{{ substat.name }}</div>
-                </div> -->
+                <div class="substats">
+                    <ng-container *ngFor="let artifactSubstat of artifact.artifactSubstats">
+                        <div class="substat">{{ artifactSubstat.substat!.name }} {{ artifactSubstat.substatValue }}</div>
+                    </ng-container>
+                </div>
             </div>
         </div>
     </div>

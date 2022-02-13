@@ -21,23 +21,6 @@ export class ArtifactsTrayComponent implements OnInit {
       equippedArtifacts: []   
   };
 
-  // artifact: Artifact = {
-  //   artifactType: '',
-  //   artifactSetType: '',
-  //   mainstat: '',
-  //   mainStatValue: '',
-  //   substat: []
-  // };
-
-  // artifacts ?: Artifact[];
-
-
-
-  // substat: Substat = {
-  //   name: ''
-  // };
-  //artifacts: any;
-
   sub: Subscription = new Subscription;
 
   constructor(

@@ -22,18 +22,6 @@ export class ShowcaseArtifactComponent implements OnInit {
     equippedArtifacts: []
   };  
 
-  //   artifact: Artifact = {
-  //   artifactType: '',
-  //   artifactSetType: '',
-  //   mainstat: '',
-  //   mainStatValue: '',
-  //   artifactSubstats: []
-  // };
-
-  // substat: Substat = {
-  //   name: ''   
-  // };
-
   constructor(
     private artifactsService: ArtifactsService,
     private characterService: CharactersService,
