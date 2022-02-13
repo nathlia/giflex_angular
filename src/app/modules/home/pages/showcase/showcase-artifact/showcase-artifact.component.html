@@ -5,12 +5,11 @@
             <div class="set-type">{{ artifact.artifactType.name }}</div>
             <div class="main-stat">{{ artifact.mainstat.name }} {{ artifact.mainStatValue }}</div>
 
-            <!-- <div class="substats">
-                <div class="substat">{{ artifact.substats[0] }}</div>
-                <div class="substat">{{ artifact.substats[1] }}</div>
-                <div class="substat">{{ artifact.substats[2] }}</div>
-                <div class="substat">{{ artifact.substats[3] }}</div>
-            </div> -->
+            <div class="substats">
+                <ng-container *ngFor="let artifactSubstat of artifact.artifactSubstats">
+                    <div class="substat">{{ artifactSubstat.substat!.name }} {{ artifactSubstat.substatValue }}</div>
+                </ng-container>
+            </div>
         </div>
     </div>
 </div>

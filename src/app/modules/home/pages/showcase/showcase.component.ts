@@ -51,8 +51,7 @@ export class ShowcaseComponent implements OnInit {
         this.image = this.selectImageservice.getImageById(id);
       }
     );    
-  }  
- 
+  }   
 
   getCharacterById(id: string) {
     this.characterService.get(id).subscribe({

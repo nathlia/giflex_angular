@@ -1,4 +1,4 @@
-import { Substat } from "./substat.model";
+import { ArtifactSubstat } from "./artifact-substat.model";
 
 export class Artifact {
     id?: number;
@@ -6,5 +6,5 @@ export class Artifact {
     artifactSetType?: any;
     mainstat?: any;
     mainStatValue?: any;
-    artifactSubstats?: Substat[];
+    artifactSubstats?: ArtifactSubstat[];
 }

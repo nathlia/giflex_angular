@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Artifact } from '../../../models/artifact.model';
 import { Character } from '../../../models/character.model';
+import { Substat } from '../../../models/substat.model';
 import { ArtifactsService } from '../../../services/artifacts.service';
 import { CharactersService } from '../../../services/characters.service';
 
@@ -12,12 +13,26 @@ import { CharactersService } from '../../../services/characters.service';
 })
 export class ShowcaseArtifactComponent implements OnInit {
 
+  array = [1, 2, 3, 4, 5];
+
   character: Character = {
     level: '',
     critRate: '',
     critDmg: '',
     equippedArtifacts: []
   };  
+
+  //   artifact: Artifact = {
+  //   artifactType: '',
+  //   artifactSetType: '',
+  //   mainstat: '',
+  //   mainStatValue: '',
+  //   artifactSubstats: []
+  // };
+
+  // substat: Substat = {
+  //   name: ''   
+  // };
 
   constructor(
     private artifactsService: ArtifactsService,
