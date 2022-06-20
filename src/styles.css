@@ -1,8 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 
+@font-face {
+    font-family: "ja-jp";
+    src: local("ja-jp") url(./assets/fonts/ja-jp.ttf) format("truetype");
+}
+
+:root {
+    --background: #121212;
+    --main: #191923;
+    --primary: #9075f3;
+    --sub: #27263a;
+    --character_name: #c79823;
+    --text_sub: rgba(255, 255, 255, 0.57);
+    --accent: ##7700ff;
+}
+
 body {
     /* font-family: "Merriweather", serif; */
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'ja-jp', sans-serif;
     /* font-weight: 900; */
     text-align: left;
     margin: 0;

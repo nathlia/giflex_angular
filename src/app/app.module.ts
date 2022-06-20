@@ -19,6 +19,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthGuardService } from './core/services/auth-guard.service';
 import { ErrorhandlerService } from './core/services/errorhandler.service';
 import { JwtinterceptorService } from './core/services/jwtinterceptor.service';
+import Swal from 'sweetalert2';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { JwtinterceptorService } from './core/services/jwtinterceptor.service';
     CharactersService, 
     SelectImageService, 
     ArtifactsService,
-    AuthGuardService,
+    AuthGuardService,    
     {provide: ErrorHandler, useClass: ErrorhandlerService},
     {provide: HTTP_INTERCEPTORS, useClass: JwtinterceptorService, multi: true}
   ],
