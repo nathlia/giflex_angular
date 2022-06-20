@@ -38,8 +38,8 @@ export class LoginComponent implements OnInit {
             toast: true,
             position: 'top-end',
             showConfirmButton: false,
-            color: 'var(--primary)',
-            background: 'var(--main)',
+            color: 'var(--background)',
+            background: 'var(--primary)',
             timer: 3000,
             timerProgressBar: true,
             didOpen: (toast) => {

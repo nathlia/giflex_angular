@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { UserAccount } from '../../models/user-account.model';
+import { ErrorhandlerService } from '../../services/errorhandler.service';
 import { UsersService } from '../../services/users.service';
 
 @Component({
@@ -19,14 +20,15 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private userAccountService: UsersService,
-    private router: Router
+    private router: Router,
+    private errorHandler: ErrorhandlerService
   ) { }
 
   ngOnInit(): void {    
   }
 
   register(): void {
-    console.log('Register was successful:');
+    console.log('Inside Register');
     console.log(this.userAccount);
 
     const data = {
@@ -59,7 +61,7 @@ export class RegisterComponent implements OnInit {
           this.router.navigate(['/login'])
 
         },
-        error: (e) => console.error(e),
+        error: (e) => this.errorHandler.handleError(e),
       });    
   }
 }

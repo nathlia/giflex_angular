@@ -10,11 +10,11 @@
             <h3>Create Account</h3>
             <form ngNativeValidate #f="ngForm" (ngSubmit)="register()">
                 <div class="md-3">
-                    <label for="username" class="form-label">Username:</label>
+                    <label for="username" class="form-label">Name:</label>
                     <input [(ngModel)]="userAccount.username" type="text" class="form-control" id="username" name="username" required>
                 </div>
                 <div class="md-3">
-                    <label for="name" class="form-label">Name:</label>
+                    <label for="name" class="form-label">Username:</label>
                     <input [(ngModel)]="userAccount.name" type="text" class="form-control" id="name" name="name" required>
                 </div>
                 <div class="md-3">
