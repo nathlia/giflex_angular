@@ -8,7 +8,7 @@
 
         <div class="login-form">
             <h3>Create Account</h3>
-            <form #f="ngForm" (ngSubmit)="register()">
+            <form ngNativeValidate #f="ngForm" (ngSubmit)="register()">
                 <div class="md-3">
                     <label for="username" class="form-label">Username:</label>
                     <input [(ngModel)]="userAccount.username" type="text" class="form-control" id="username" name="username" required>

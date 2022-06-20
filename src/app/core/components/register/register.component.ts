@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { UserAccount } from '../../models/user-account.model';
 import { UsersService } from '../../services/users.service';
 
@@ -18,7 +19,7 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private userAccountService: UsersService,
-    private route: ActivatedRoute
+    private router: Router
   ) { }
 
   ngOnInit(): void {    
@@ -33,13 +34,32 @@ export class RegisterComponent implements OnInit {
       name: this.userAccount.name,
       password: this.userAccount.password
     };
-
+   
     this.userAccountService.create(data).subscribe({
-      next: (res) => {
-        console.log(res);
-      },
-      error: (e) => console.error(e),
-    });
-  }
+        next: (res) => {
+          console.log(res);
+          const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            color: 'var(--primary)',
+            background: 'var(--main)',
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+          
+          Toast.fire({
+            icon: 'success',
+            title: 'Registered successfully'
+          })          
+          this.router.navigate(['/login'])
 
+        },
+        error: (e) => console.error(e),
+      });    
+  }
 }

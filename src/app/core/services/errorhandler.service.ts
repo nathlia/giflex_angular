@@ -1,6 +1,7 @@
 import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { fn } from '@angular/compiler/src/output/output_ast';
 import { ErrorHandler, Injectable, NgZone } from '@angular/core';
+import Swal from 'sweetalert2';
 import { LoginService } from './login.service';
 
 @Injectable({
@@ -23,7 +24,17 @@ export class ErrorhandlerService implements ErrorHandler {
           
       switch (error.status) {
         case 400:
-          alert(error.error)
+          //alert(error.error)
+          Swal.fire({
+            title: 'Oops...',
+            text: 'Wrong Username or Password!',    
+            color: 'var(--primary)',
+            background: 'var(--main)',    
+            imageUrl: './assets/img/icons/error.webp',
+            imageWidth: 224,
+            imageHeight: 256,
+            imageAlt: 'Custom image',
+          })    
           break;      
         case 401:
           alert('Session expired')
