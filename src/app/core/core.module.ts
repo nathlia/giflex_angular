@@ -20,6 +20,7 @@ import { JwtinterceptorService } from './services/jwtinterceptor.service';
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    FormsModule,
 
     AppRoutingModule
   ],

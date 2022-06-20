@@ -117,7 +117,7 @@ export class AddArtifactFormComponent implements OnInit {
   }
 
   addArtifact(): void {
-    console.log('Submited artifact:');
+    console.log('Submitted artifact:');
     console.log(this.artifact);
 
     const data = {

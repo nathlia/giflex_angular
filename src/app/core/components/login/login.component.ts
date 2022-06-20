@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Player } from '../../models/player.model';
+import { UserAccount } from '../../models/user-account.model';
 import { LoginService } from '../../services/login.service';
 import Swal from 'sweetalert2';
 @Component({
@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
         title: 'Signed in successfully'
       })
 
-      this.loginService.login(new Player(username, '', password, '')).subscribe(
+      this.loginService.login(new UserAccount(username, '', password, '')).subscribe(
         next => {
           this.loginService.setLoggedUser(next)
           this.router.navigate(['/characters'])
