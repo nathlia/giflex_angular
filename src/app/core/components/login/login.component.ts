@@ -53,6 +53,7 @@ export class LoginComponent implements OnInit {
             title: 'Signed in successfully'
           })
           this.router.navigate(['/characters'])
+          window.location.reload()
         })   
     } 
     else {
@@ -66,7 +67,7 @@ export class LoginComponent implements OnInit {
         imageWidth: 224,
         imageHeight: 256,
         imageAlt: 'Custom image',
-      })     
+      })          
     }
   }
 

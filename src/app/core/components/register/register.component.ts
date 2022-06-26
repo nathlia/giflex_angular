@@ -44,8 +44,8 @@ export class RegisterComponent implements OnInit {
             toast: true,
             position: 'top-end',
             showConfirmButton: false,
-            color: 'var(--primary)',
-            background: 'var(--main)',
+            color: 'var(--main)',
+            background: 'var(--primary)',
             timer: 3000,
             timerProgressBar: true,
             didOpen: (toast) => {

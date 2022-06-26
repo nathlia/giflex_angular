@@ -32,7 +32,7 @@ export class LoginService {
     this.router.navigate(['/login']);
   }
 
-  getLoggedUser(): UserAccount {
-    return JSON.parse(<string> sessionStorage.getItem(this.LOGGED_USER));
+  getLoggedUser(): UserAccount {    
+    return JSON.parse(<string> sessionStorage.getItem(this.LOGGED_USER));   
   }
 }

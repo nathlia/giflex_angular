@@ -12,6 +12,7 @@ export class NavbarComponent implements OnInit {
 
   player: UserAccount = new UserAccount();
   url: string = '';
+  logged: boolean = false;
 
   constructor(
     private loginService: LoginService,
@@ -21,11 +22,14 @@ export class NavbarComponent implements OnInit {
       this.player = this.loginService.getLoggedUser();
     }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
+    if (this.player != null) {
+      this.logged = true;      
+    }   
   }
 
   logout() {
     this.loginService.logout();
+    this.logged = false;
   }
-
 }
