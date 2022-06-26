@@ -1,9 +1,17 @@
 .register-box {
-    width: 359px;
     align-items: flex-start;
     padding: 33px;
     gap: 29px;
     border-radius: 13px;
+    margin: 16px;
+}
+
+.set-box {
+    align-items: flex-start;
+    padding: 33px;
+    gap: 29px;
+    border-radius: 13px;
+    margin: 16px;
 }
 
 .row {
@@ -17,10 +25,14 @@
     margin-bottom: 10px;
 }
 
-.container {
-    max-width: 509px;
-}
-
 .md-4 {
     padding: 21px;
+}
+
+.col {
+    margin: 5px;
+}
+
+#fourpieces {
+    height: 150px;
 }
