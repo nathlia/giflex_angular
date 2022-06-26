@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Player } from '../models/player.model';
+import { UserAccount } from '../models/user-account.model';
 
 //const baseUrl = "http://localhost:8080/login"
 
@@ -19,12 +19,12 @@ export class LoginService {
     private router: Router
     ) { }
 
-  login(player: Player): Observable<Player> {
-    return this.http.post<Player>(this.API_URL+'login', player);
+  login(userAccount: UserAccount): Observable<UserAccount> {
+    return this.http.post<UserAccount>(this.API_URL+'login', userAccount);
   }
 
-  setLoggedUser(player: Player) : void {
-    sessionStorage.setItem(this.LOGGED_USER, JSON.stringify(player));
+  setLoggedUser(userAccount: UserAccount) : void {
+    sessionStorage.setItem(this.LOGGED_USER, JSON.stringify(userAccount));
   } 
 
   logout(): void {
@@ -32,7 +32,7 @@ export class LoginService {
     this.router.navigate(['/login']);
   }
 
-  getLoggedUser(): Player {
-    return JSON.parse(<string> sessionStorage.getItem(this.LOGGED_USER));
+  getLoggedUser(): UserAccount {    
+    return JSON.parse(<string> sessionStorage.getItem(this.LOGGED_USER));   
   }
 }

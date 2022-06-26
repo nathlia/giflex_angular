@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Player } from '../../models/player.model';
+import { UserAccount } from '../../models/user-account.model';
 import { LoginService } from '../../services/login.service';
 
 @Component({
@@ -10,8 +10,9 @@ import { LoginService } from '../../services/login.service';
 })
 export class NavbarComponent implements OnInit {
 
-  player: Player = new Player();
+  player: UserAccount = new UserAccount();
   url: string = '';
+  logged: boolean = false;
 
   constructor(
     private loginService: LoginService,
@@ -21,11 +22,14 @@ export class NavbarComponent implements OnInit {
       this.player = this.loginService.getLoggedUser();
     }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
+    if (this.player != null) {
+      this.logged = true;      
+    }   
   }
 
   logout() {
     this.loginService.logout();
+    this.logged = false;
   }
-
 }

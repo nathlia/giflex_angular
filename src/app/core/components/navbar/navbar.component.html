@@ -7,10 +7,10 @@
         <div class="collapse navbar-collapse " id="navbarNav ">
             <ul class="navbar-nav ">
                 <a routerLinkActive="active" routerLink="characters" class="nav-link">Characters</a>
-                <a routerLink="/login" class="nav-link">Login</a>
-                <a routerLink="/register" class="nav-link">Sign Up</a>
-                <a (click)="logout()" class="nav-link">Log Out</a>
-                <!-- <a class="nav-link">{{player.username}}</a> -->
+                <a routerLink="/login" *ngIf="logged == false" class="nav-link">Login</a>
+                <a routerLink="/register" *ngIf="logged == false" class="nav-link">Sign Up</a>
+                <a (click)="logout()" *ngIf="logged == true" class="nav-link">Log Out</a>
+                <a class="nav-link" *ngIf="logged == true">{{player.username}}</a>
             </ul>
         </div>
     </div>

@@ -59,7 +59,7 @@
 
                             <ng-container *ngFor="let artifactSubstat of artifact.artifactSubstats">
 
-                                <select class="form-select " aria-label="Default select set" name="susbtats" [(ngModel)]="artifact.artifactSubstats">
+                                <select class="form-select " aria-label="Default select set" name="substats" [(ngModel)]="artifact.artifactSubstats">
                                     <option *ngFor="let substat of substat" [ngValue]="substat.id">
                                         {{substat.name}}
                                     </option>
