@@ -18,8 +18,6 @@ import { RegisterCharacterComponent } from './pages/admin/register-character/reg
 @NgModule({
   declarations: [
     CharactersComponent,
-    RegisterArtifactComponent,
-    RegisterCharacterComponent
   ],
   imports: [ 
     RouterModule,
