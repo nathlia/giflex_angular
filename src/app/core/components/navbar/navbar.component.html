@@ -1,18 +1,22 @@
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #191923">
     <div class="container">
         <a routerLinkActive="active" routerLink="/characters" class="navbar-brand">GIFLEX</a>
-        <button class="navbar-toggler transale-middle" type="button " data-bs-toggle="collapse " data-bs-target="#navbarNav " aria-controls="navbarNav " aria-expanded="false " aria-label="Toggle navigation ">
-            <span class="navbar-toggler-icon "></span>
-        </button>
-        <div class="collapse navbar-collapse " id="navbarNav ">
-            <ul class="navbar-nav ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse " id="navbarText">
+            <ul class="navbar-nav mr-auto">
                 <a routerLinkActive="active" routerLink="characters" class="nav-link">Characters</a>
                 <a routerLink="/login" *ngIf="logged == false" class="nav-link">Login</a>
                 <a routerLink="/register" *ngIf="logged == false" class="nav-link">Sign Up</a>
+                <a routerLink="/register" *ngIf="user.isAdmin == false" class="nav-link">Register Character</a>
+                <a routerLink="/register" *ngIf="user.isAdmin == false" class="nav-link">Register Artifact</a>
                 <a (click)="logout()" *ngIf="logged == true" class="nav-link">Log Out</a>
-                <a class="nav-link" *ngIf="logged == true">{{player.username}}</a>
             </ul>
         </div>
+        <span class="navbar-text">
+            {{user.username}}
+          </span>
     </div>
 </nav>
 <div id="navbar_line"></div>

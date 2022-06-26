@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FalseLiteral } from 'typescript';
 import { UserAccount } from '../../models/user-account.model';
 import { LoginService } from '../../services/login.service';
 
@@ -10,7 +11,7 @@ import { LoginService } from '../../services/login.service';
 })
 export class NavbarComponent implements OnInit {
 
-  player: UserAccount = new UserAccount();
+  user: UserAccount = new UserAccount();
   url: string = '';
   logged: boolean = false;
 
@@ -19,12 +20,13 @@ export class NavbarComponent implements OnInit {
     private router: Router
     ) { 
       this.url = router.url;
-      this.player = this.loginService.getLoggedUser();
+      this.user = this.loginService.getLoggedUser();
     }
 
   ngOnInit(): void {    
-    if (this.player != null) {
-      this.logged = true;      
+    if (this.user != null) {
+      this.logged = true; 
+        
     }   
   }
 

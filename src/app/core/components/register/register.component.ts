@@ -14,8 +14,7 @@ export class RegisterComponent implements OnInit {
   userAccount: UserAccount = {
     username: '',
     name: '',
-    password: '',    
-    // isAdmin: false,    
+    password: '',        
   };
 
   constructor(
