@@ -122,6 +122,13 @@ input:focus {
     color: rgba(255, 255, 255, 0.57);
 }
 
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #7700ff;
+    background-color: #27263A;
+    color: rgba(255, 255, 255, 0.57);
+}
+
 .form-select {
     background: #27263A;
     padding: 10px;
@@ -137,7 +144,8 @@ select:focus {
 
 input[type=text],
 input[type=number],
-input[type=password] {
+input[type=password],
+input[type=textarea] {
     background-color: #27263A;
     color: rgba(255, 255, 255, 0.57);
     border: 0;
@@ -146,7 +154,8 @@ input[type=password] {
 
 input[type=text]:active,
 input[type=number]:active,
-input[type=password]:active {
+input[type=password]:active,
+input[type=textarea]:active {
     background-color: #27263A;
     color: rgba(255, 255, 255, 0.57);
     border: 0;
@@ -154,7 +163,8 @@ input[type=password]:active {
 
 input[type=text]:focus,
 input[type=number]:focus,
-input[type=password]:focus {
+input[type=password]:focus,
+input[type=textarea]:focus {
     outline: none;
     box-shadow: 0 0 0 2px #7700ff;
     background-color: #27263A;
@@ -185,6 +195,10 @@ select:-webkit-autofill:focus {
     -webkit-box-shadow: 0 0 0px 1000px #27263A inset;
     box-shadow: 0 0 0px 1000px #27263A inset;
     transition: background-color 5000s ease-in-out 0s;
+}
+
+.form-control:valid {
+    background-color: #27263A!important;
 }
 
 

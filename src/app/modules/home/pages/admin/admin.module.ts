@@ -8,13 +8,15 @@ import { RouterModule } from '@angular/router';
 import { ArtifactSetTypeService } from '../../services/artifact-set-type.service';
 import { RegisterArtifactComponent } from './register-artifact/register-artifact.component';
 import { RegisterCharacterComponent } from './register-character/register-character.component';
+import { ListarArtifactSetTypesComponent } from './listar-artifact-set-types/listar-artifact-set-types.component';
 
 
 @NgModule({
   declarations: [
     AdminComponent,
     RegisterArtifactComponent,
-    RegisterCharacterComponent
+    RegisterCharacterComponent,
+    ListarArtifactSetTypesComponent
   ],
   imports: [
     CommonModule,
