@@ -1,10 +1,13 @@
-.login-box {
-    width: 359px;
+.register-box {
+    width: 768px;
     background-color: #1f1d29;
-    align-items: flex-start;
-    padding: 33px;
-    gap: 29px;
-    border-radius: 13px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-radius: 2%;
+    position: relative;
+    left: -116px;
 }
 
 .row {
@@ -36,7 +39,7 @@ a {
 }
 
 #main.container {
-    max-width: 768px;
+    max-width: 713px;
     background-color: transparent;
 }
 

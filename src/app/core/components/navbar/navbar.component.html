@@ -6,7 +6,7 @@
           </button>
         <div class="collapse navbar-collapse " id="navbarText">
             <ul class="navbar-nav mr-auto">
-                <a routerLinkActive="active" routerLink="characters" class="nav-link">Characters</a>
+                <a routerLinkActive="active" *ngIf="logged == true" routerLink="characters" class="nav-link">Characters</a>
                 <a routerLink="/login" *ngIf="logged == false" class="nav-link">Login</a>
                 <a routerLink="/register" *ngIf="logged == false" class="nav-link">Sign Up</a>
                 <a routerLink="/admin/register_character" *ngIf="user.is_admin == false" class="nav-link">Register Character</a>
