@@ -1,15 +1,25 @@
-<div *ngFor="let artifact of character.equippedArtifacts">
-    <div class="card">
-        <div class="artifact-box">
-            <div class="set-name">{{ artifact.artifactSetType.name }}</div>
-            <div class="set-type">{{ artifact.artifactType.name }}</div>
-            <div class="main-stat">{{ artifact.mainstat.name }} {{ artifact.mainStatValue }}</div>
+<div id="artifacts-tray">
+    <section class="artifacts">
+        <div fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="32px 12px grid">
+            <div class="artifact">
+                <div *ngFor="let artifact of character.equippedArtifacts">
+                    <div class="card">
+                        <div fxFlex="25">
+                            <div class="artifact-box">
+                                <div class="set-name">{{ artifact.artifactSetType.name }}</div>
+                                <div class="set-type">{{ artifact.artifactType.name }}</div>
+                                <div class="main-stat">{{ artifact.mainstat.name }} {{ artifact.mainStatValue }}</div>
 
-            <div class="substats">
-                <ng-container *ngFor="let artifactSubstat of artifact.artifactSubstats">
-                    <div class="substat">{{ artifactSubstat.substat!.name }} {{ artifactSubstat.substatValue }}</div>
-                </ng-container>
+                                <div class="substats">
+                                    <ng-container *ngFor="let artifactSubstat of artifact.artifactSubstats">
+                                        <div class="substat">{{ artifactSubstat.substat!.name }} {{ artifactSubstat.substatValue }}</div>
+                                    </ng-container>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 </div>

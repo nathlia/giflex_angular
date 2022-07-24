@@ -46,8 +46,8 @@ export class ShowcaseComponent implements OnInit {
     this.getCharacterById(this.route.snapshot.params["charaId"]);
 
     this.sub = this.route.params.subscribe(
-      (paramns: any) => {
-        let id = paramns['imageId'];
+      (params: any) => {
+        let id = params['imageId'];
         this.image = this.selectImageservice.getImageById(id);
       }
     );    

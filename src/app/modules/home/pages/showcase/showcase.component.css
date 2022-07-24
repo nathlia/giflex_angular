@@ -7,20 +7,13 @@ img {
 }
 
 .showcase-data {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: space-between;
-    align-items: center;
-    height: 717px;
-    width: 1287px;
-    margin-bottom: 20px;
+    height: 719px;
 }
 
 .character-status {
     position: relative;
-    top: 578px;
+    top: -138px;
+    left: 0px;
     width: 767px;
     right: 1287px;
     height: 99px;
@@ -49,23 +42,20 @@ img {
     border-radius: 0%;
 }
 
-#artifacts-tray {
-    position: relative;
-    width: 400px;
-    height: 672px;
-    right: 1173px;
+#download {
+    display: none;
 }
 
 .artifacts {
     display: flex;
     flex-wrap: wrap;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    flex-direction: row;
-    align-items: flex-start;
-    margin: auto;
 }
 
-#download {
-    display: none;
+#downloadButton {
+    position: relative;
+    left: 424px;
+}
+
+#buttons {
+    margin-top: 20px;
 }
