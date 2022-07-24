@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { IndexedAccessType } from 'typescript';
 import { ArtifactSetType } from '../../../models/artifact-set-type.model';
+import { ArtifactSubstat } from '../../../models/artifact-substat.model';
 import { ArtifactType } from '../../../models/artifact-type.model';
 import { Artifact } from '../../../models/artifact.model';
 import { Character } from '../../../models/character.model';
@@ -24,7 +26,9 @@ export class AddArtifactFormComponent implements OnInit {
 
   type?: ArtifactType[];
   set?: ArtifactSetType[];
-  substat?: Substat[];
+  selectedArtifactSubstats?: ArtifactSubstat[];
+  substats?: Substat[];
+  selectedSubstat?: Substat;
 
   character: Character = {
     name: '',
@@ -49,21 +53,43 @@ export class AddArtifactFormComponent implements OnInit {
     private characterService: CharactersService,
     private route: ActivatedRoute,
     private router: Router
-  ) {}
+  ) {
+  }
 
   ngOnInit(): void {
     if (this.router.url.indexOf('edit') > -1) {
       console.log('Inside Edit');
       this.getArtifactById(this.route.snapshot.params['artId']);
-
+      
+     
       this.isEdit = true;
-    }
+    }   
 
     this.getType();
     this.getSet();
     this.getSubstat();
     this.getCharacterById(this.route.snapshot.params['charaId']);
     this.charaId = this.route.snapshot.params['charaId'];
+  }
+
+  setSelectedSubstat() {
+    this.selectedArtifactSubstats = this.artifact.artifactSubstats;      
+    console.log('selectedArtifactSubstats: ')
+    console.log(this.selectedArtifactSubstats)
+  }
+
+  getSelectedSubstatId() : number {
+     if (this.selectedArtifactSubstats) {
+      for (let sub of this.selectedArtifactSubstats) { 
+        console.log('sub' + sub.substat!.id)      
+        if (sub.substat) {         
+            this.selectedSubstat = sub.substat.id;
+            console.log(sub.substat.id)              
+            return sub.substat.id;
+        }        
+      }
+    }  
+    return 0;
   }
 
   getCharacterById(id: string) {
@@ -79,11 +105,12 @@ export class AddArtifactFormComponent implements OnInit {
   getArtifactById(id: string) {
     this.artifactsService.get(id).subscribe({
       next: (data) => {
-        this.artifact = data;
-        console.log(data);
-      },
+        this.artifact = data;      
+        this.setSelectedSubstat();
+        console.log(data);             
+      },    
       error: (e) => console.error(e),
-    });
+    });   
   }
 
   getType() {
@@ -109,7 +136,7 @@ export class AddArtifactFormComponent implements OnInit {
   getSubstat() {
     this.substatService.getAll().subscribe({
       next: (data) => {
-        this.substat = data;
+        this.substats = data;
         console.log(data);
       },
       error: (e) => console.error(e),
