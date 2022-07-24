@@ -46,3 +46,8 @@ a {
 .md-4 {
     padding: 21px;
 }
+
+.error-msg {
+    font-size: 15px;
+    color: #cd7ee7;
+}

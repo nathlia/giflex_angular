@@ -8,7 +8,7 @@
 
         <div class="register-form">
             <h3>Create Account</h3>
-            <form ngNativeValidate #f="ngForm" (ngSubmit)="register()">
+            <form ngNativeValidate #PasswordValidation="ngForm" (ngSubmit)="register()">
                 <div class="md-3">
                     <label for="username" class="form-label">Name:</label>
                     <input [(ngModel)]="userAccount.username" type="text" class="form-control" id="username" name="username" required>
@@ -19,11 +19,18 @@
                 </div>
                 <div class="md-3">
                     <label for="password" class="form-label">Password:</label>
-                    <input [(ngModel)]="userAccount.password" type="password" class="form-control" id="password" name="password" required>
+                    <input [(ngModel)]="userAccount.password" type="password" class="form-control" id="password" name="password" #Password="ngModel" minlength="3" maxlength="8" [pattern]="passwordPtn" required>
+                    <span class="error-msg" *ngIf="(Password.touched || PasswordValidation.submitted) && Password.errors?.required">Password Required</span>
+                    <span class="error-msg" *ngIf="(Password.touched || PasswordValidation.submitted) && Password.errors?.pattern">Password must be 3-8 characters long.</span>
+                </div>
+                <div class="md-3">
+                    <label for="password" class="form-label">Confirm Password:</label>
+                    <input [(ngModel)]="userAccount.confirmPassword" type="password" class="form-control" id="confirmPassword" name="confirmPassword" #confirmPassword="ngModel" minlength="3" maxlength="8" required>
+                    <span class="error-msg" *ngIf="(confirmPassword.touched || PasswordValidation.submitted) && confirmPassword.errors?.required">Confirm Password Required</span><br>
+                    <span class="error-msg" *ngIf="(confirmPassword.touched || PasswordValidation.submitted) && userAccount.password !==userAccount.confirmPassword">Passwords not matching.</span>
                 </div>
                 <div class="row">
                     <div class="md-8">
-                        <!-- <a class="btn btn-primary" id="register" [routerLink]="['/register']">Create Account</a> -->
                     </div>
                     <div class="md-4">
                         <button type="submit" class="btn btn-primary">Register</button>

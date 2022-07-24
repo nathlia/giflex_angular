@@ -2,6 +2,7 @@ export class UserAccount {
     username?: string;
     name?: string;
     password?: string;
+    confirmPassword?: string;
     token?: string;
     is_admin?: boolean;
 
