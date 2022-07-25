@@ -26,9 +26,31 @@ export class AddArtifactFormComponent implements OnInit {
 
   type?: ArtifactType[];
   set?: ArtifactSetType[];
+  selectedArtifactSubstat?: ArtifactSubstat  = {
+    substat: undefined,
+    substatValue: '',
+  };
+
+  selectedArtifactSubstat1?: ArtifactSubstat  = {
+    substat: undefined,
+    substatValue: '',
+  };
+
+  selectedArtifactSubstat2?: ArtifactSubstat  = {
+    substat: undefined,
+    substatValue: '',
+  };
+
+  selectedArtifactSubstat3?: ArtifactSubstat  = {
+    substat: undefined,
+    substatValue: '',
+  };
   selectedArtifactSubstats?: ArtifactSubstat[];
+  
   substats?: Substat[];
+  selectedSubstats?: Substat[];
   selectedSubstat?: Substat;
+  substatValue?: number;
 
   character: Character = {
     name: '',
@@ -62,6 +84,15 @@ export class AddArtifactFormComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router
   ) {
+    // this.selectedArtifactSubstats = [
+    //   {
+    //     substat: {
+    //       id: 0,
+    //       name: ''
+    //     },
+    //     substatValue: 0
+    //   }
+    // ];     
   }
 
   ngOnInit(): void {    
@@ -73,23 +104,25 @@ export class AddArtifactFormComponent implements OnInit {
   }
 
   setSelectedSubstat() {
-    this.selectedArtifactSubstats = this.artifact.artifactSubstats;      
+    //this.selectedArtifactSubstats = this.artifact.artifactSubstats;  
+    
+   
     console.log('selectedArtifactSubstats: ')
     console.log(this.selectedArtifactSubstats)
   }
 
-  getSelectedSubstatId() : number {
+  getSelectedSubstats(){
+    var counter = 0;
      if (this.selectedArtifactSubstats) {
-      for (let sub of this.selectedArtifactSubstats) { 
-        console.log('sub' + sub.substat!.id)      
-        if (sub.substat) {         
-            this.selectedSubstat = sub.substat.id;
-            console.log(sub.substat.id)              
-            return sub.substat.id;
-        }        
+       while (counter < 4) {
+        for (let sub of this.selectedArtifactSubstats) { 
+          
+                
+        }
       }
+      
     }  
-    return 0;
+  
   }
 
   getCharacterById(id: string) {
