@@ -11,7 +11,6 @@ const routes: Routes = [
       import('./components/characters/characters.module').then(
         (m) => m.CharactersModule
       ),
-      
   },
   {
     path: 'add-character',
@@ -56,6 +55,15 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/showcase/showcase.module').then(
         (m) => m.ShowcaseModule
+      ),
+  },
+  {
+    path: 'admin',
+    canLoad:[AuthGuardService],
+    canActivate:[AuthGuardService],
+    loadChildren: () =>
+      import('./pages/admin/admin.module').then(
+        (m) => m.AdminModule
       ),
   }
 ];

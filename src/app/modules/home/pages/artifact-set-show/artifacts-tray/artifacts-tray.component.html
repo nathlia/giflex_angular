@@ -1,5 +1,5 @@
 <div class="row">
-    <div *ngFor="let artifact of character.equippedArtifacts" class="col-3">
+    <div *ngFor="let artifact of character.equippedArtifacts; let i = index" class="col-3">
         <div class="type">{{ artifact.artifactType.name }} &nbsp;</div>
         <div class="card" [routerLink]="['/artifact', character.id, character.name, artifact.id, 'edit']">
             <div class="artifact-box">
@@ -14,8 +14,10 @@
             </div>
         </div>
     </div>
-</div>
+    <span *ngIf="counter < 5">
+        <div>
+            <a class="btn btn-primary" [routerLink]="['/artifact', character.id, character.name, 'add']">add</a>
+        </div>
+    </span>
 
-<div class="null">
-    <a class="btn btn-primary" [routerLink]="['/artifact', character.id, character.name, 'add']">add</a>
 </div>

@@ -8,13 +8,15 @@ import { ArtifactsComponent } from './artifacts.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { EditArtifactComponent } from './edit-artifact/edit-artifact.component';
 
 
 @NgModule({
   declarations: [
     AddArtifactFormComponent,
     AddSubstatsComponent,
-    ArtifactsComponent
+    ArtifactsComponent,
+    EditArtifactComponent
   ],
   imports: [
     CommonModule,

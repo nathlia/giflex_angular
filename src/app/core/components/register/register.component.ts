@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import { UserAccount } from '../../models/user-account.model';
 import { ErrorhandlerService } from '../../services/errorhandler.service';
 import { UsersService } from '../../services/users.service';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -14,9 +15,13 @@ export class RegisterComponent implements OnInit {
   userAccount: UserAccount = {
     username: '',
     name: '',
-    password: '',    
-    // isAdmin: false,    
+    password: '',        
   };
+
+  reactiveForm!: FormGroup;
+  // passwordPtn = '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{3,8}$';
+  passwordPtn = '^().{3,8}$';
+  
 
   constructor(
     private userAccountService: UsersService,

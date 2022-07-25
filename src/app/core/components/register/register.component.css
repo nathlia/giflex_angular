@@ -1,4 +1,4 @@
-.login-box {
+.register-box {
     width: 768px;
     background-color: #1f1d29;
     padding-left: 100px;
@@ -6,6 +6,8 @@
     padding-top: 50px;
     padding-bottom: 50px;
     border-radius: 2%;
+    position: relative;
+    left: -116px;
 }
 
 .row {
@@ -33,9 +35,19 @@ a {
 }
 
 .container {
-    max-width: 768px;
+    max-width: 509px;
+}
+
+#main.container {
+    max-width: 713px;
+    background-color: transparent;
 }
 
 .md-4 {
     padding: 21px;
+}
+
+.error-msg {
+    font-size: 15px;
+    color: #cd7ee7;
 }

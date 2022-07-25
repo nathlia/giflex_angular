@@ -1,6 +1,5 @@
 <div class="container">
     <div #screen>
-
         <section class="showcase-data">
             <div class="image">
                 <img src="../../../../../../assets/img/showcase/{{character.name}}/{{image.id}}.jpg">
@@ -19,18 +18,19 @@
                     </li>
                 </ul>
             </div>
-            <div id="artifacts-tray">
-                <section class="artifacts">
-                    <div class="artifact">
-                        <app-showcase-artifact></app-showcase-artifact>
-                    </div>
-                </section>
+            <div>
+                <app-showcase-artifact></app-showcase-artifact>
             </div>
         </section>
     </div>
-
-    <a class="btn btn-primary" [routerLink]="['/select-image', character.id, character.name]">Back</a>
-    <a class="btn btn-primary" (click)="downloadImage()">Download Image</a>
+    <div class="row" id="buttons">
+        <div class="col">
+            <a class="btn btn-primary" [routerLink]="['/select-image', character.id, character.name]">Back</a>
+        </div>
+        <div class="col" id="downloadButton">
+            <a class="btn btn-primary" (click)="downloadImage()">Download Image</a>
+        </div>
+    </div>
 </div>
 
 <div id="download">

@@ -15,11 +15,12 @@ import { CharactersService } from '../../../services/characters.service';
 import { SubstatService } from '../../../services/substat.service';
 
 @Component({
-  selector: 'app-add-artifact-form',
-  templateUrl: './add-artifact-form.component.html',
-  styleUrls: ['./add-artifact-form.component.css'],
+  selector: 'app-edit-artifact',
+  templateUrl: './edit-artifact.component.html',
+  styleUrls: ['./edit-artifact.component.css']
 })
-export class AddArtifactFormComponent implements OnInit {
+export class EditArtifactComponent implements OnInit {
+
   charaId = '';
   index = [1, 2, 3, 4];
   isEdit : boolean = false;
@@ -64,7 +65,14 @@ export class AddArtifactFormComponent implements OnInit {
   ) {
   }
 
-  ngOnInit(): void {    
+  ngOnInit(): void {
+    if (this.router.url.indexOf('edit') > -1) {
+      console.log('Inside Edit');
+      this.getArtifactById(this.route.snapshot.params['artId']);     
+      
+      this.isEdit = true;
+    }   
+    
     this.getType();
     this.getSet();
     this.getSubstat();
@@ -123,9 +131,29 @@ export class AddArtifactFormComponent implements OnInit {
       error: (e) => console.error(e),
     });
   }
+  
+  getTypeById() {
+    this.artifactTypeService.get(this.artifact.artifactType.id).subscribe({
+      next: (data) => {
+        this.type = data;
+        console.log(data);
+      },
+      error: (e) => console.error(e),
+    });
+  }
 
   getSet() {
     this.artifactSetTypeService.getAll().subscribe({
+      next: (data) => {
+        this.set = data;
+        console.log(data);
+      },
+      error: (e) => console.error(e),
+    });
+  }
+
+  getSetById() {
+    this.artifactSetTypeService.get(this.artifact.artifactSetType.id).subscribe({
       next: (data) => {
         this.set = data;
         console.log(data);
@@ -143,9 +171,27 @@ export class AddArtifactFormComponent implements OnInit {
       error: (e) => console.error(e),
     });
   }
- 
+
+  getSubstatById() {
+    this.substatService.get(this.artifact.mainstat.id).subscribe({
+      next: (data) => {
+        this.artifact.mainstat = data;
+        console.log(data);
+      },
+      error: (e) => console.error(e),
+    });
+  }
+
+  setSelectedArtifact() {  
+    this.getSetById;
+    this.getTypeById;
+    this.getSubstatById; // mainstat            
+    //this.artifact.artifactSubstats = this.selectedArtifact.artifactSubstats;    
+  }
+
   addArtifact(): void {
-    console.log('Submitted artifact:');   
+    console.log('Submitted artifact:');
+    this.setSelectedArtifact();
     console.log(this.artifact);   
 
     const data = {      
@@ -163,5 +209,24 @@ export class AddArtifactFormComponent implements OnInit {
       },
       error: (e) => console.error(e),
     });
-  }  
+  }
+
+  editArtifact(): void {
+    this.artifactsService.update(this.artifact.id, this.artifact).subscribe({
+      next: (res) => {
+        console.log(res);
+      },
+      error: (e) => console.log(e)
+    });
+  }
+
+  deleteArtifact(): void {
+    console.log('Delete');    
+    this.artifactsService.delete(this.artifact.id).subscribe({
+      next: (res) => {
+        console.log(res);
+      },
+      error: (e) => console.error(e),
+    });
+  }
 }

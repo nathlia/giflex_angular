@@ -1,3 +1,4 @@
+<p>edit-artifact works!</p>
 <div class="container">
     <div class="row">
         <div class="col-md-2">
@@ -12,7 +13,7 @@
                 <div class="col">
                     <div class="col">
                         <label for="type" class="col-form-label">Type:</label>
-                        <select class="form-select" aria-label="Default select type" name="artifactType" [(ngModel)]="artifact.artifactType">
+                        <select class="form-select" aria-label="Default select type" name="artifactType" [(ngModel)]="artifact.artifactType.id">
                             <option *ngFor="let type of type" [ngValue]="type.id">
                                 {{type.name}}
                             </option>
@@ -20,7 +21,7 @@
                     </div>
                     <div class="col">
                         <label for="set" class="col-form-label">Set:</label>
-                        <select class="form-select" aria-label="Default select set" name="artifactSetType" [(ngModel)]="artifact.artifactSetType">
+                        <select class="form-select" aria-label="Default select set" name="artifactSetType" [(ngModel)]="artifact.artifactSetType.id">
                             <option *ngFor="let set of set" [ngValue]="set.id">
                                 {{set.name}}
                             </option>
@@ -28,7 +29,7 @@
                     </div>
                     <div class="col">
                         <label for="substat " class="col-form-label ">Main Stat:</label>
-                        <select class="form-select " aria-label="Default select set " name="mainstat" [(ngModel)]="artifact.mainstat">
+                        <select class="form-select " aria-label="Default select set " name="mainstat" [(ngModel)]="artifact.mainstat.id">
                             <option *ngFor="let substat of substats" [ngValue]="substat.id">
                                 {{substat.name}}
                             </option>
@@ -40,7 +41,7 @@
                     </div>
                 </div>
 
-                <!-- <div class="col-md-4" id="substats">
+                <div class="col-md-4" id="substats">
                     <h3>Substats:</h3>
                     <div class="row">
                         <div *ngIf="isEdit">
@@ -60,11 +61,14 @@
                             </ng-container>
                         </div>
                     </div>
-                </div> -->
+                </div>
 
                 <div class="row">
                     <div class="col-12">
-                        <button *ngIf="isEdit === false" id="btn-save " type="submit " [routerLink]="[ '/characters/artifact-set', character.id, character.name] " class="btn btn-primary " (click)="addArtifact() ">Save</button>
+                        <button class="btn btn-primary" type="button" *ngIf="isEdit" (click)="deleteArtifact()" [routerLink]="['/characters/artifact-set',  character.id, character.name]">Delete</button>
+                    </div>
+                    <div class="col-12">
+                        <button *ngIf="isEdit" id="btn-save " type="submit " [routerLink]="[ '/characters/artifact-set', character.id, character.name] " class="btn btn-primary " (click)="editArtifact()">Edit</button>
                     </div>
                 </div>
 
