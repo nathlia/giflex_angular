@@ -70,11 +70,12 @@ export class RegisterArtifactComponent implements OnInit {
             toast.addEventListener('mouseleave', Swal.resumeTimer)
           }
         })
-        
+       
         Toast.fire({
           icon: 'success',
           title: 'Registered successfully'
         })       
+        window.location.reload()  
       },
       error: (e) => console.log(e),
     });
@@ -97,11 +98,12 @@ export class RegisterArtifactComponent implements OnInit {
             toast.addEventListener('mouseleave', Swal.resumeTimer)
           }
         })
-        
+              
         Toast.fire({
           icon: 'success',
           title: 'Edited successfully'
-        })       
+        }) 
+        window.location.reload()      
       },
       error: (e) => console.log(e),
     });
@@ -112,6 +114,8 @@ export class RegisterArtifactComponent implements OnInit {
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
       icon: 'warning',
+      color: 'var(--primary)',
+      background: 'var(--main)',    
       showCancelButton: true,
       cancelButtonColor: '#d33',
       confirmButtonColor: '#9075f3',      
@@ -141,6 +145,7 @@ export class RegisterArtifactComponent implements OnInit {
               icon: 'success',
               title: 'Deleted successfully'
             })       
+            window.location.reload()  
           },
           error: (e) => console.error(e),
         });          

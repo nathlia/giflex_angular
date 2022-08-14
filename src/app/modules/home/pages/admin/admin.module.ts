@@ -9,9 +9,6 @@ import { ArtifactSetTypeService } from '../../services/artifact-set-type.service
 import { RegisterArtifactComponent } from './register-artifact/register-artifact.component';
 import { RegisterCharacterComponent } from './register-character/register-character.component';
 import { ListarArtifactSetTypesComponent } from './listar-artifact-set-types/listar-artifact-set-types.component';
-import { ArtifactListComponent } from './register-artifact/list/artifact-list/artifact-list.component';
-import { AddSetComponent } from './register-artifact/add-set/add-set.component';
-
 
 @NgModule({
   declarations: [
@@ -19,8 +16,6 @@ import { AddSetComponent } from './register-artifact/add-set/add-set.component';
     RegisterArtifactComponent,
     RegisterCharacterComponent,
     ListarArtifactSetTypesComponent,
-    ArtifactListComponent,
-    AddSetComponent
   ],
   imports: [
     CommonModule,
