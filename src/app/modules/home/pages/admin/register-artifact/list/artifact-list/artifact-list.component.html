@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="list-box">
+        <div class="item" *ngFor="let artifact of artifactSetType; let i = index">
+            <h3 [attr.id]="'heading' + i">
+                <button class="accordion-button" type="button" (click)='openAccordion[i] = !openAccordion[i]' data-bs-toggle="collapse" [attr.data-target]="'#collapse' + i" aria-expanded="true" [attr.aria-controls]="'collapse' + i">
+                      {{ artifact.name }}
+                  </button>
+            </h3>
+
+            <div [attr.id]="'collapse' + i" class="accordion-collapse collapse" [class.show]='openAccordion[i]' [attr.aria-labelledby]="'heading' + i" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div>
+                        <div>Two-pieces: {{ artifact.twopieces }}</div>
+                        <div class="line"></div>
+                        <div>Four-pieces: {{ artifact.fourpieces }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

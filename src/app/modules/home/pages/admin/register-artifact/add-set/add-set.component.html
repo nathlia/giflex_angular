@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="register-box">
+
+                <div class="row md-2">
+                    <div class="col">
+                        <h2 class="md">Register Artifact Set</h2>
+                        <div class="line"></div>
+                    </div>
+                </div>
+
+                <div class="set-form">
+                    <form ngNativeValidate #f="ngForm" (ngSubmit)="addSet()">
+                        <div class="row md-2">
+                            <div class="col-5">
+                                <label for="name" class="form-label">Name:</label>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input [(ngModel)]="artifactSetType.name" type="text" class="form-control" id="name" name="name" required>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row  md-2">
+                            <div class="col-5">
+                                <h3>Description:</h3>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                        <div class="row md-2">
+                            <div class="col-5">
+                                <label for="twopieces" class="form-label">2-Piece Bonus:</label>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input [(ngModel)]="artifactSetType.twopieces" type="text" class="form-control" id="twopieces" name="twopieces" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row md-2">
+                            <div class="col-5">
+                                <label for="fourpieces" class="form-label">4-Piece Bonus:</label>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <!-- <textarea [(ngModel)]="artifactSetType.fourpieces"class="form-control" id="fourpieces" rows="3"></textarea> -->
+                                    <input [(ngModel)]="artifactSetType.fourpieces" type="text" class="form-control" id="fourpieces" name="fourpieces" required>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row md-2">
+                            <div class="row">
+                                <div class="col">
+                                    <a class="btn btn-primary" id="register">Cancel</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <!-- <button id="btn-save " type="submit" class="btn btn-primary " (click)="addArtifact() ">Save</button> -->
+                                    <!-- <button *ngIf="isEdit" id="btn-save " type="submit " [routerLink]="[ '/characters'] " class="btn btn-primary " (click)="editSet()">Edit</button> -->
+                                    <button type="submit" class="btn btn-primary">Register</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

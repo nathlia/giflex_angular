@@ -20,6 +20,7 @@ import { AuthGuardService } from './core/services/auth-guard.service';
 import { ErrorhandlerService } from './core/services/errorhandler.service';
 import { JwtinterceptorService } from './core/services/jwtinterceptor.service';
 import Swal from 'sweetalert2';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import Swal from 'sweetalert2';
     AppRoutingModule,
     CoreRoutingModule,
     HomeRoutingModule,
+    BrowserAnimationsModule,
     
   ],
   providers: [

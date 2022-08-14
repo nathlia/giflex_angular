@@ -5,6 +5,42 @@
     src: local("ja-jp") url(./assets/fonts/ja-jp.ttf) format("truetype");
 }
 
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 10px;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    background: #27263a;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: #2d2446;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #201a31;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
 :root {
     --background: #121212;
     --main: #191923;
@@ -13,6 +49,7 @@
     --character_name: #c79823;
     --text_sub: rgba(255, 255, 255, 0.57);
     --accent: ##7700ff;
+    --text: #d9d9d9
 }
 
 body {
