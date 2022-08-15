@@ -6,26 +6,34 @@
                 <button type="button" class="btn btn-primary" [routerLink]="['/characters/artifact-set', character.id, character.name]">Back</button>
             </div>
         </div>
-        <div class="col-mb-4">
-            <form #f="ngForm" (ngSubmit)="editCharacter()">
-                <div class="mb-3">
-                    <label for="name" class="form-label">Name</label>
-                    <input class="form-control" disabled [(ngModel)]="character.name" id="disabled" type="text" name="name">
+        <div class="box">
+            <div class="col-mb-4">
+                <div class="row md-2">
+                    <div class="col">
+                        <h2 class="md">Edit</h2>
+                        <div class="line"></div>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="level" class="form-label">Level</label>
-                    <input class="active" class="form-control" [(ngModel)]="character.level" type="number" name="level" maxlength="2">
-                </div>
-                <div class="mb-3">
-                    <label for="critRate" class="form-label">Crit Rate</label>
-                    <input class="active" class="form-control" [(ngModel)]="character.critRate" type="number" name="critRate" maxlength="6">
-                </div>
-                <div class="mb-3">
-                    <label for="critDmg" class="form-label">Crit Dmg</label>
-                    <input class="active" class="form-control" [(ngModel)]="character.critDmg" type="number" name="critDmg" maxlength="6">
-                </div>
-                <button id="btn-save" type="submit" [routerLink]="['/characters/artifact-set', character.id, character.name]" class="btn btn-primary" (click)="editCharacter()">Save</button>
-            </form>
+                <form #f="ngForm" (ngSubmit)="editCharacter()">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input class="form-control" disabled [(ngModel)]="character.name" id="disabled" type="text" name="name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="level" class="form-label">Level</label>
+                        <input class="active" class="form-control" [(ngModel)]="character.level" type="number" name="level" maxlength="2">
+                    </div>
+                    <div class="mb-3">
+                        <label for="critRate" class="form-label">Crit Rate</label>
+                        <input class="active" class="form-control" [(ngModel)]="character.critRate" type="number" name="critRate" maxlength="6">
+                    </div>
+                    <div class="mb-3">
+                        <label for="critDmg" class="form-label">Crit Dmg</label>
+                        <input class="active" class="form-control" [(ngModel)]="character.critDmg" type="number" name="critDmg" maxlength="6">
+                    </div>
+                    <button id="btn-save" type="submit" [routerLink]="['/characters/artifact-set', character.id, character.name]" class="btn btn-primary" (click)="editCharacter()">Save</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>

@@ -1,1 +1,114 @@
-<p>register-character works!</p>
+<div class="container">
+    <div class="row">
+
+        <!-- list -->
+        <div class="list-box">
+            <div class="row md-2">
+                <div class="col">
+                    <h2 class="md">Character List</h2>
+                    <div class="line"></div>
+                </div>
+            </div>
+
+            <div class="item" *ngFor="let character of characters; let i = index">
+                <div class="delete-icon"><img src="../../../../../../assets/img/icons/icons8-delete-24.png" (click)="deleteCharacter(character.id)" /></div>
+
+                <h3 class="name" [attr.id]="'heading' + i">
+                    <button class="accordion-button" type="button" (click)='openAccordion[i] = !openAccordion[i]' data-bs-toggle="collapse" [attr.data-target]="'#collapse' + i" aria-expanded="true" [attr.aria-controls]="'collapse' + i">
+                        {{ character.name }}
+                    </button>
+                </h3>
+
+                <div class="edit-icon"><img src="../../../../../../assets/img/icons/84380.png" (click)="onClick(character)" /></div>
+
+                <div [attr.id]="'collapse' + i" class="accordion-collapse collapse" [class.show]='openAccordion[i]' [attr.aria-labelledby]="'heading' + i" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="desc">
+                            <div>Crit Rate: {{ character.critRate }}</div>
+                            <div class="line"></div>
+                            <div>Crit Dmg: {{ character.critDmg }}</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- add -->
+        <div class="row">
+            <div class="col">
+                <div class="register-box">
+
+                    <div class="row md-2">
+                        <div class="col">
+                            <h2 class="md">Register Character</h2>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+
+                    <div class="set-form">
+                        <form ngNativeValidate #f="ngForm">
+                            <div class="row md-2">
+                                <div class="col-5">
+                                    <label for="name" class="form-label">Name:</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <input [(ngModel)]="character.name" type="text" class="form-control" id="name" name="name" required>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row  md-2">
+                                <div class="col-5">
+                                    <h3>Stats:</h3>
+                                    <div class="line"></div>
+                                </div>
+                            </div>
+                            <div class="row md-2">
+                                <div class="col-5">
+                                    <label for="twopieces" class="form-label">Crit Rate:</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <input [(ngModel)]="character.critRate" type="number" class="form-control" id="twopieces" name="twopieces">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row md-2">
+                                <div class="col-5">
+                                    <label for="twopieces" class="form-label">Crit Dmg:</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <input [(ngModel)]="character.critDmg" type="number" class="form-control" id="twopieces" name="twopieces">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row md-2">
+                                <div class="row">
+                                    <div class="col">
+                                        <a class="btn btn-primary" id="register" (click)="clear()">Cancel</a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <!-- <button id="btn-save " type="submit" class="btn btn-primary " (click)="addArtifact() ">Save</button> -->
+                                        <!-- <button *ngIf="isEdit" id="btn-save " type="submit " [routerLink]="[ '/characters'] " class="btn btn-primary " (click)="editSet()">Edit</button> -->
+                                        <button *ngIf="!isEdit" type="submit" (click)="addCharacter()" class="btn btn-primary">Register</button>
+
+                                        <button *ngIf="isEdit " type="submit " (click)="editCharacter()" class="btn btn-primary ">Edit</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
