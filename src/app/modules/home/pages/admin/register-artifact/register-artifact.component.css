@@ -1,4 +1,5 @@
-.register-box {
+.register-box,
+.list-box {
     width: 447px;
     align-items: flex-end;
     padding: 33px;
@@ -7,6 +8,22 @@
     align-items: baseline;
     position: relative;
     right: -153px;
+    -webkit-border-radius: 27px;
+    border-radius: 27px;
+    background: #191923;
+    -webkit-box-shadow: 5px 5px 15px #16161f, -5px -5px 15px #1c1c27;
+    box-shadow: 5px 5px 15px #16161f, -5px -5px 15px #1c1c27;
+}
+
+.register-box {
+    position: relative;
+    right: 155px;
+    height: 599px;
+}
+
+.list-box {
+    height: 599px;
+    overflow-y: auto;
 }
 
 .row {
@@ -31,6 +48,7 @@
 #fourpieces {
     height: 150px;
     width: 400px;
+    overflow-y: auto;
 }
 
 #twopieces {
@@ -40,4 +58,38 @@
 
 .desc {
     margin-top: 16px;
+}
+
+.accordion-button {
+    color: var(--text);
+    border-radius: 6px;
+    background: var(--sub);
+    border: none;
+    width: 370px;
+    height: 42px;
+}
+
+.line {
+    height: 1px;
+    background: rgba(157, 122, 255, 0.33);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.accordion-body {
+    margin-bottom: 11px;
+}
+
+.delete-icon {
+    position: relative;
+    float: left;
+    left: 6px;
+    top: 33px;
+}
+
+.edit-icon {
+    position: relative;
+    float: right;
+    right: 18px;
+    top: -46px;
 }

@@ -1,3 +1,77 @@
 .col {
     margin: 2%;
 }
+
+.box {
+    width: 1022px;
+    align-items: flex-end;
+    gap: 29px;
+    border-radius: 13px;
+    align-items: baseline;
+    position: relative;
+    right: -24px;
+    -webkit-border-radius: 27px;
+    border-radius: 27px;
+    background: #191923;
+    -webkit-box-shadow: 5px 5px 15px #16161f, -5px -5px 15px #1c1c27;
+    box-shadow: 5px 5px 15px #16161f, -5px -5px 15px #1c1c27;
+    height: 627px;
+}
+
+#main {
+    width: 200px;
+}
+
+#value {
+    width: 160px;
+    position: relative;
+    top: -39px;
+    left: 68px;
+}
+
+#delete {
+    position: relative;
+    right: 769px;
+    top: 436px;
+}
+
+#edit {
+    position: relative;
+    right: -83px;
+    top: 251px;
+}
+
+#substats {
+    width: 978px;
+    position: fixed;
+    left: 1032px;
+    top: 195px;
+}
+
+.scroll {
+    height: 382px;
+    overflow-y: auto;
+    position: relative;
+    top: -390px;
+}
+
+#selects {
+    height: 43px;
+    position: relative;
+    top: 40px;
+    width: 169px;
+}
+
+.value {
+    width: 163px;
+    position: relative;
+    top: -58px;
+    left: 236px;
+    height: 3px;
+}
+
+#label {
+    position: relative;
+    left: -60px;
+    top: 42px;
+}

@@ -1,3 +1,26 @@
 .container {
     align-items: center;
 }
+
+.box {
+    width: 447px;
+    align-items: flex-end;
+    padding: 33px;
+    gap: 29px;
+    border-radius: 13px;
+    align-items: baseline;
+    position: relative;
+    right: -153px;
+    -webkit-border-radius: 27px;
+    border-radius: 27px;
+    background: #191923;
+    -webkit-box-shadow: 5px 5px 15px #16161f, -5px -5px 15px #1c1c27;
+    box-shadow: 5px 5px 15px #16161f, -5px -5px 15px #1c1c27;
+}
+
+.line {
+    height: 2px;
+    background: rgba(157, 122, 255, 0.33);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

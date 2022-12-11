@@ -44,3 +44,30 @@
 .artifact-box {
     text-align: center;
 }
+
+.card:hover {
+    border-color: #ae5eff;
+}
+
+.plus-h {
+    position: relative;
+    width: 100px;
+    height: 15px;
+    left: 45px;
+    top: 80px;
+    background: #424252;
+}
+
+.add-box {
+    margin: 47px;
+}
+
+.plus-v {
+    position: relative;
+    width: 100px;
+    height: 15px;
+    left: 48px;
+    top: 92px;
+    background: #424252;
+    transform: rotate(90deg);
+}

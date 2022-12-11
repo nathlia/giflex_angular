@@ -10,13 +10,12 @@ import { RegisterArtifactComponent } from './register-artifact/register-artifact
 import { RegisterCharacterComponent } from './register-character/register-character.component';
 import { ListarArtifactSetTypesComponent } from './listar-artifact-set-types/listar-artifact-set-types.component';
 
-
 @NgModule({
   declarations: [
     AdminComponent,
     RegisterArtifactComponent,
     RegisterCharacterComponent,
-    ListarArtifactSetTypesComponent
+    ListarArtifactSetTypesComponent,
   ],
   imports: [
     CommonModule,
